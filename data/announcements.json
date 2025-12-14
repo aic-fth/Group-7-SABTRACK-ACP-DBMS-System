@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "title": "Welcome to SABTRACK",
+    "content": "Welcome to the SABTRACK waste management system. Please report any waste-related issues through our platform.",
+    "created_by": 1,
+    "created_at": "2024-01-01 08:00:00"
+  },
+  {
+    "id": 2,
+    "title": "Waste Collection Schedule Update",
+    "content": "Please note that waste collection schedules may vary due to holidays. Check the schedule page for updates.",
+    "created_by": 1,
+    "created_at": "2024-01-02 09:00:00"
+  },
+  {
+    "id": 3,
+    "title": "Environmental Awareness Campaign",
+    "content": "Join our environmental awareness campaign to keep Barangay Sabang clean and green.",
+    "created_by": 1,
+    "created_at": "2024-01-03 10:00:00"
+  },
+  {
+    "id": 4,
+    "title": "New Recycling Program",
+    "content": "We are introducing a new recycling program. Separate your recyclables for better waste management.",
+    "created_by": 1,
+    "created_at": "2024-01-04 11:00:00"
+  },
+  {
+    "id": 5,
+    "title": "Proper Waste Disposal Tips",
+    "content": "Learn how to properly segregate your waste into biodegradable, non-biodegradable, and recyclable categories to improve waste management.",
+    "created_by": 1,
+    "created_at": "2024-01-05 12:00:00"
+  },
+  {
+    "id": 6,
+    "title": "Community Clean-Up Event",
+    "content": "Join us for a community clean-up event this Saturday at the barangay hall. Let's work together to keep our environment clean.",
+    "created_by": 1,
+    "created_at": "2024-01-06 13:00:00"
+  },
+  {
+    "id": 7,
+    "title": "Hazardous Waste Handling",
+    "content": "Guidelines for handling hazardous waste: Do not mix with regular trash. Contact authorities for proper disposal methods.",
+    "created_by": 1,
+    "created_at": "2024-01-07 14:00:00"
+  },
+  {
+    "id": 8,
+    "title": "Reduce, Reuse, Recycle Initiative",
+    "content": "Embrace the 3Rs: Reduce consumption, Reuse items, and Recycle materials to minimize waste and protect the planet.",
+    "created_by": 1,
+    "created_at": "2024-01-08 15:00:00"
+  },
+  {
+    "id": 9,
+    "title": "Waste Management Workshop",
+    "content": "Attend our upcoming workshop on effective waste management techniques. Register now to learn valuable skills.",
+    "created_by": 1,
+    "created_at": "2024-01-09 16:00:00"
+  },
+  {
+    "id": 10,
+    "title": "Plastic Pollution Awareness",
+    "content": "Plastic pollution is a growing threat. Reduce single-use plastics and opt for eco-friendly alternatives.",
+    "created_by": 1,
+    "created_at": "2024-01-10 17:00:00"
+  },
+  {
+    "id": 11,
+    "title": "Composting at Home",
+    "content": "Start composting your organic waste at home. It's easy, beneficial for the soil, and reduces landfill contributions.",
+    "created_by": 1,
+    "created_at": "2024-01-11 18:00:00"
+  },
+  {
+    "id": 12,
+    "title": "Illegal Dumping Penalties",
+    "content": "Illegal dumping of waste is prohibited and may result in fines. Help us maintain a clean community by reporting violations.",
+    "created_by": 1,
+    "created_at": "2024-01-12 19:00:00"
+  },
+  {
+    "id": 13,
+    "title": "Eco-Friendly Products",
+    "content": "Discover eco-friendly products available in our barangay. Support sustainable businesses and reduce environmental impact.",
+    "created_by": 1,
+    "created_at": "2024-01-13 20:00:00"
+  },
+  {
+    "id": 14,
+    "title": "Waste Collection Efficiency",
+    "content": "Our waste collection services are now more efficient. Expect timely pickups and better coverage in all areas.",
+    "created_by": 1,
+    "created_at": "2024-01-14 21:00:00"
+  },
+  {
+    "id": 15,
+    "title": "Green Living Tips",
+    "content": "Adopt green living habits: Conserve water, save energy, and minimize waste for a healthier planet.",
+    "created_by": 1,
+    "created_at": "2024-01-15 22:00:00"
+  },
+  {
+    "id": 16,
+    "title": "Recycling Centers Locations",
+    "content": "Find recycling centers near you. Drop off your recyclables and contribute to a circular economy.",
+    "created_by": 1,
+    "created_at": "2024-01-16 23:00:00"
+  },
+  {
+    "id": 17,
+    "title": "Seasonal Waste Changes",
+    "content": "During the rainy season, waste collection may be affected. Plan accordingly and store waste securely.",
+    "created_by": 1,
+    "created_at": "2024-01-17 08:00:00"
+  },
+  {
+    "id": 18,
+    "title": "Volunteer Opportunities",
+    "content": "Volunteer for environmental initiatives. Join clean-up drives and awareness programs in your community.",
+    "created_by": 1,
+    "created_at": "2024-01-18 09:00:00"
+  },
+  {
+    "id": 19,
+    "title": "Waste Audit Results",
+    "content": "Our recent waste audit shows progress in recycling rates. Thank you for your participation in sustainable practices.",
+    "created_by": 1,
+    "created_at": "2024-01-19 10:00:00"
+  },
+  {
+    "id": 20,
+    "title": "Sustainable Packaging",
+    "content": "Choose products with sustainable packaging. Reduce plastic waste by selecting biodegradable or reusable options.",
+    "created_by": 1,
+    "created_at": "2024-01-20 11:00:00"
+  }
+]

@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "user_id": 2,
+    "issue_type": "Illegal Dumping",
+    "location": "123 Main St, Barangay Sabang",
+    "description": "Garbage dumped illegally on the street corner",
+    "photo_path": null,
+    "status": "pending",
+    "created_at": "2024-01-01 08:00:00"
+  },
+  {
+    "id": 2,
+    "user_id": 3,
+    "issue_type": "Overflowing Bin",
+    "location": "456 Oak Ave, Barangay Sabang",
+    "description": "Public waste bin is overflowing and needs immediate attention",
+    "photo_path": null,
+    "status": "pending",
+    "created_at": "2024-01-02 09:00:00"
+  },
+  {
+    "id": 3,
+    "user_id": 4,
+    "issue_type": "Blocked Drainage",
+    "location": "789 Pine St, Barangay Sabang",
+    "description": "Waste blocking the drainage system causing flooding",
+    "photo_path": null,
+    "status": "resolved",
+    "created_at": "2024-01-03 10:00:00"
+  },
+  {
+    "id": 4,
+    "user_id": 5,
+    "issue_type": "Uncollected Waste",
+    "location": "321 Elm St, Barangay Sabang",
+    "description": "Waste has not been collected for several days",
+    "photo_path": null,
+    "status": "pending",
+    "created_at": "2024-01-04 11:00:00"
+  },
+  {
+    "id": 5,
+    "user_id": 6,
+    "issue_type": "Illegal Dumping",
+    "location": "654 Maple Rd, Barangay Sabang",
+    "description": "Construction debris dumped in residential area",
+    "photo_path": null,
+    "status": "pending",
+    "created_at": "2024-01-05 12:00:00"
+  },
+  {
+    "id": 6,
+    "user_id": 7,
+    "issue_type": "Overflowing Bin",
+    "location": "987 Birch Ln, Barangay Sabang",
+    "description": "Waste bin near the park is full and attracting pests",
+    "photo_path": null,
+    "status": "resolved",
+    "created_at": "2024-01-06 13:00:00"
+  },
+  {
+    "id": 7,
+    "user_id": 8,
+    "issue_type": "Blocked Drainage",
+    "location": "321 Cedar St, Barangay Sabang",
+    "description": "Leaves and trash clogging the street drain",
+    "photo_path": null,
+    "status": "pending",
+    "created_at": "2024-01-07 14:00:00"
+  },
+  {
+    "id": 8,
+    "user_id": 9,
+    "issue_type": "Uncollected Waste",
+    "location": "159 Spruce Ave, Barangay Sabang",
+    "description": "Garbage bags left out for over a week",
+    "photo_path": null,
+    "status": "pending",
+    "created_at": "2024-01-08 15:00:00"
+  },
+  {
+    "id": 9,
+    "user_id": 10,
+    "issue_type": "Illegal Dumping",
+    "location": "753 Willow Rd, Barangay Sabang",
+    "description": "Old furniture abandoned on the sidewalk",
+    "photo_path": null,
+    "status": "resolved",
+    "created_at": "2024-01-09 16:00:00"
+  },
+  {
+    "id": 10,
+    "user_id": 11,
+    "issue_type": "Overflowing Bin",
+    "location": "246 Ash St, Barangay Sabang",
+    "description": "Commercial waste bin overflowing during business hours",
+    "photo_path": null,
+    "status": "pending",
+    "created_at": "2024-01-10 17:00:00"
+  },
+  {
+    "id": 11,
+    "user_id": 12,
+    "issue_type": "Blocked Drainage",
+    "location": "369 Poplar Ln, Barangay Sabang",
+    "description": "Plastic bags stuck in the gutter causing water backup",
+    "photo_path": null,
+    "status": "pending",
+    "created_at": "2024-01-11 18:00:00"
+  },
+  {
+    "id": 12,
+    "user_id": 13,
+    "issue_type": "Uncollected Waste",
+    "location": "582 Fir Ave, Barangay Sabang",
+    "description": "Recycling bins not emptied for two weeks",
+    "photo_path": null,
+    "status": "resolved",
+    "created_at": "2024-01-12 19:00:00"
+  },
+  {
+    "id": 13,
+    "user_id": 14,
+    "issue_type": "Illegal Dumping",
+    "location": "147 Elm Rd, Barangay Sabang",
+    "description": "Hazardous waste containers left in alleyway",
+    "photo_path": null,
+    "status": "pending",
+    "created_at": "2024-01-13 20:00:00"
+  },
+  {
+    "id": 14,
+    "user_id": 15,
+    "issue_type": "Overflowing Bin",
+    "location": "258 Oak St, Barangay Sabang",
+    "description": "School waste bin overflowing with cafeteria trash",
+    "photo_path": null,
+    "status": "pending",
+    "created_at": "2024-01-14 21:00:00"
+  },
+  {
+    "id": 15,
+    "user_id": 16,
+    "issue_type": "Blocked Drainage",
+    "location": "369 Pine Ln, Barangay Sabang",
+    "description": "Sand and construction materials blocking storm drain",
+    "photo_path": null,
+    "status": "resolved",
+    "created_at": "2024-01-15 22:00:00"
+  },
+  {
+    "id": 16,
+    "user_id": 17,
+    "issue_type": "Uncollected Waste",
+    "location": "480 Maple Ave, Barangay Sabang",
+    "description": "Medical waste from clinic not picked up",
+    "photo_path": null,
+    "status": "pending",
+    "created_at": "2024-01-16 23:00:00"
+  },
+  {
+    "id": 17,
+    "user_id": 18,
+    "issue_type": "Illegal Dumping",
+    "location": "591 Birch Rd, Barangay Sabang",
+    "description": "Tires dumped behind commercial building",
+    "photo_path": null,
+    "status": "pending",
+    "created_at": "2024-01-17 08:00:00"
+  },
+  {
+    "id": 18,
+    "user_id": 19,
+    "issue_type": "Overflowing Bin",
+    "location": "702 Cedar St, Barangay Sabang",
+    "description": "Apartment complex dumpster overflowing",
+    "photo_path": null,
+    "status": "resolved",
+    "created_at": "2024-01-18 09:00:00"
+  },
+  {
+    "id": 19,
+    "user_id": 20,
+    "issue_type": "Blocked Drainage",
+    "location": "813 Spruce Ln, Barangay Sabang",
+    "description": "Food waste from market blocking sewer line",
+    "photo_path": null,
+    "status": "pending",
+    "created_at": "2024-01-19 10:00:00"
+  },
+  {
+    "id": 20,
+    "user_id": 2,
+    "issue_type": "Uncollected Waste",
+    "location": "924 Willow Rd, Barangay Sabang",
+    "description": "Bulk waste from home renovation not collected",
+    "photo_path": null,
+    "status": "pending",
+    "created_at": "2024-01-20 11:00:00"
+  }
+]

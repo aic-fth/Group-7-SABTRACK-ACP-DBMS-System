@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+
+{% block title %}Awareness Hub - SABTRACK{% endblock %}
+
+{% block content %}
+<div class="page-container">
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="header-content">
+            <h1>Awareness Hub</h1>
+            <p class="page-subtitle">Learn about waste segregation and environmental sustainability</p>
+        </div>
+        {% if session.role != 'admin' %}
+        <div class="header-actions">
+            <a href="{{ url_for('notifications') }}" class="btn btn-secondary notification-settings-btn">
+                🔔 Notifications
+            </a>
+        </div>
+        {% endif %}
+
+
+    </div>
+
+    <!-- Awareness Block -->
+    <section class="content-section">
+        <div class="awareness-cards-grid">
+            <div class="awareness-card shadow-lg border-primary bg-gradient-light">
+                <div class="card-header">
+                    <h2>🌱 Why Waste Segregation Matters</h2>
+                </div>
+                <div class="card-body">
+                    <p class="intro-text">Waste segregation helps reduce the amount of waste going to landfills, protects public health by minimizing pollution and disease spread, and supports environmental conservation by enabling recycling and composting. By sorting waste properly, we can turn trash into resources and create a cleaner, healthier planet for everyone.</p>
+                </div>
+            </div>
+
+            <div class="awareness-card shadow-lg border-primary bg-gradient-light">
+                <div class="card-header">
+                    <h2>📋 Step-by-Step Tips for Segregating Waste</h2>
+                </div>
+                <div class="card-body">
+                    <ol class="tips-list">
+                        <li><strong>Set up bins:</strong> Use separate bins or bags for biodegradable (food scraps, yard waste), recyclable (paper, plastics, metals, glass), and residual/special waste (non-recyclable items like soiled paper or electronics).</li>
+                        <li><strong>Clean recyclables:</strong> Rinse containers to remove food residue, as dirty items can contaminate the recycling process.</li>
+                        <li><strong>Compost organics:</strong> Collect food waste and yard trimmings in a compost bin to create nutrient-rich soil instead of landfill methane.</li>
+                        <li><strong>Handle hazardous waste:</strong> Dispose of batteries, chemicals, and electronics at designated collection points or through community programs to prevent soil and water contamination.</li>
+                        <li><strong>Educate and involve:</strong> Teach family or community members about segregation and make it a habit at home or work.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="awareness-card shadow-lg border-primary bg-gradient-light">
+                <div class="card-header">
+                    <h2>📊 Benefits of Waste Segregation</h2>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="benefits-table">
+                            <thead>
+                                <tr>
+                                    <th>Benefit</th>
+                                    <th>Environmental Impact</th>
+                                    <th>Community Impact</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Reduced Landfill Burden</td>
+                                    <td>Less waste in landfills means lower methane emissions and preserved land.</td>
+                                    <td>Fewer overflowing dumps and cleaner neighborhoods.</td>
+                                </tr>
+                                <tr>
+                                    <td>Better Public Health</td>
+                                    <td>Decreased pollution from hazardous waste leaching into soil and water.</td>
+                                    <td>Lower risk of diseases from improper waste handling.</td>
+                                </tr>
+                                <tr>
+                                    <td>Enhanced Recycling</td>
+                                    <td>More materials recovered for reuse, reducing the need for new resource extraction.</td>
+                                    <td>Economic benefits from recycled goods and job creation in recycling industries.</td>
+                                </tr>
+                                <tr>
+                                    <td>Resource Conservation</td>
+                                    <td>Preserves natural resources like water, minerals, and energy used in manufacturing.</td>
+                                    <td>Sustainable communities with less dependency on imported materials.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="awareness-card shadow-lg border-primary bg-gradient-light">
+                <div class="card-header">
+                    <h2>🚀 Simple Actions You Can Take Today</h2>
+                </div>
+                <div class="card-body">
+                    <ul class="actions-list">
+                        <li>Start sorting your household waste into the three main categories right now.</li>
+                        <li>Join or organize a community clean-up event to raise awareness.</li>
+                        <li>Reduce waste by choosing reusable items over single-use plastics.</li>
+                        <li>Share tips with neighbors or on social media to spread the word.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="awareness-card shadow-lg border-primary bg-gradient-light">
+                <div class="card-header">
+                    <h2>📚 Reliable Resources for Further Reading</h2>
+                </div>
+                <div class="card-body resources-bg">
+                    <div class="resources-grid">
+                        <div class="resource-card">
+                            <div class="resource-icon">♻️</div>
+                            <h4>Recycling Basics</h4>
+                            <p>Comprehensive guide on waste segregation, recycling processes, and environmental benefits from the U.S. Environmental Protection Agency.</p>
+                            <div class="resource-source">Source: EPA</div>
+                            <a href="https://www.epa.gov/recycle" target="_blank" class="resource-link">Read More</a>
+                        </div>
+                        <div class="resource-card">
+                            <div class="resource-icon">🏠</div>
+                            <h4>The Importance of Proper Waste Segregation at Home</h4>
+                            <p>Practical tips and benefits of waste segregation in household settings, focusing on sustainable practices.</p>
+                            <div class="resource-source">Source: EarthCare Disposal</div>
+                            <a href="https://earthcaredisposal.co.ke/the-importance-of-proper-waste-segregation-at-home/" target="_blank" class="resource-link">Read More</a>
+                        </div>
+                        <div class="resource-card">
+                            <div class="resource-icon">🌍</div>
+                            <h4>Sustainable Consumption and Production</h4>
+                            <p>United Nations overview on global goals for sustainable waste management and resource conservation.</p>
+                            <div class="resource-source">Source: UN</div>
+                            <a href="https://www.un.org/sustainabledevelopment/sustainable-consumption-production/" target="_blank" class="resource-link">Read More</a>
+                        </div>
+                        <div class="resource-card">
+                            <div class="resource-icon">🐢</div>
+                            <h4>Plastic Pollution</h4>
+                            <p>In-depth article on the impact of plastic waste on oceans and ecosystems, with solutions for reduction.</p>
+                            <div class="resource-source">Source: National Geographic</div>
+                            <a href="https://www.nationalgeographic.com/environment/article/plastic-pollution" target="_blank" class="resource-link">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

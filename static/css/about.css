@@ -1,0 +1,189 @@
+/* --- Hero Section --- */
+.about-hero {
+    background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+    color: rgb(255, 255, 255);
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.about-hero h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+.about-hero p {
+    font-size: 1.2rem;
+    opacity: 0.95;
+    max-width: 700px;
+    margin: 0 auto;
+    white-space: nowrap;
+}
+
+/* --- About Section: Mission, Vision, Goals (plain text) --- */
+.about-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.about-section {
+    margin-bottom: 40px;
+    background: white;
+    padding: 20px;
+}
+
+.about-section h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #dc2626;
+    margin-bottom: 16px;
+    position: relative;
+    display: inline-block;
+}
+
+.about-section h2::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #dc2626;
+    margin-top: 6px;
+    border-radius: 2px;
+}
+
+.about-section p,
+.about-section ul {
+    font-size: 1rem;
+    color: #374151;
+    line-height: 1.7;
+    margin-top: 1rem;
+}
+
+.about-section ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+}
+
+
+
+/* SDG Section */
+.services-section {
+  padding: 80px 20px 120px 20px;
+  background-color: #ffffff;
+}
+
+.services-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 900;
+  color: #dc2626;
+}
+
+.services-section > .container > p {
+  text-align: center;
+  color: #6b7280;
+  margin-bottom: 4rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1rem;
+}
+
+/* SDG Cards Grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* SDG Card */
+.service-card {
+  background: #f5f5f5;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.service-card:hover {
+  transform: translateY(-3px);
+  border-color: #dc2626; /* red border on hover */
+  box-shadow: 0 6px 14px rgba(220, 38, 38, 0.1);
+  background-color: #ffffff;
+}
+
+/* Emoji / Number Circle - Fully Centered */
+.sdg-number {
+  display: flex;                  /* use flex for better centering */
+  flex-direction: column;         /* stack emoji and number vertically */
+  align-items: center;            /* center horizontally */
+  justify-content: center;        /* center vertically */
+  width: 80px;                    /* larger circle size */
+  height: 80px;
+  border-radius: 50%;
+  background-color: white;        /* white background */
+  color: black !important;        /* black emoji/number for better contrast */
+  font-size: 1.6rem;              /* adjusted font size */
+  font-weight: 900;
+  margin: 0 auto 2rem auto;       /* increased spacing below */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  opacity: 1 !important;          /* fully visible */
+  line-height: 1;                 /* normal line height */
+}
+
+
+/* SDG Title */
+.service-card h3 {
+  font-size: 1rem;
+  margin-top: .5rem;
+  margin-bottom: 0.5rem;
+  color: #111;
+  font-weight: 700;
+}
+
+/* SDG Description */
+.service-card p {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: #6b7280;
+  margin: 0;
+}
+
+
+
+/* --- Highlight Card (Featured) --- */
+.sdg-card.highlighted {
+  border: 2px solid var(--primary-color);
+  box-shadow: 0 8px 20px rgba(220, 38, 38, 0.15);
+  transform: scale(1.02);
+}
+
+.sdg-card.highlighted:hover {
+  border-color: var(--primary-dark);
+  transform: scale(1.02) translateY(-8px);
+}
+
+
+.about-highlight {
+  background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);            /* white background */
+  padding: 3.5rem 3rem;        /* increased padding for larger height and width */
+  text-align: center;
+  color: rgb(255, 255, 255);                 /* black text for better contrast */
+  font-size: 1.4rem;           /* larger font size */
+  line-height: 1.6;
+  width: 100vw;                /* full viewport width */
+  margin-left: calc(-50vw + 50%); /* center the full-width element */
+  margin-right: calc(-50vw + 50%);
+  box-sizing: border-box;      /* include padding in width */
+  margin-top: 2rem;            /* spacing above */
+  margin-bottom: 0;         /* spacing below */
+  border-radius: 0;            /* remove border-radius for full-width look */
+}

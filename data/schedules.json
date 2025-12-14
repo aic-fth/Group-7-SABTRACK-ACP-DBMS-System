@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "day": "Monday",
+    "area": "Gen Luna St",
+    "waste_type": "General Waste",
+    "time_start": "7:00 AM",
+    "time_end": "10:00 AM"
+  },
+  {
+    "id": 2,
+    "day": "Tuesday",
+    "area": "Q P. Laygo St",
+    "waste_type": "General Waste",
+    "time_start": "7:00 AM",
+    "time_end": "10:00 AM"
+  },
+  {
+    "id": 3,
+    "day": "Wednesday",
+    "area": "9 Llamar",
+    "waste_type": "General Waste",
+    "time_start": "8:00 AM",
+    "time_end": "10:00 AM"
+  },
+  {
+    "id": 4,
+    "day": "Thursday",
+    "area": "Q Monte Claro",
+    "waste_type": "General Waste",
+    "time_start": "7:00 AM",
+    "time_end": "10:00 AM"
+  },
+  {
+    "id": 5,
+    "day": "Friday",
+    "area": "9 City Park",
+    "waste_type": "General Waste",
+    "time_start": "9:00 AM",
+    "time_end": "10:00 AM"
+  },
+  {
+    "id": 6,
+    "day": "Saturday",
+    "area": "9 Gen Luna St",
+    "waste_type": "Bulky Waste",
+    "time_start": "9:00 AM",
+    "time_end": "10:00 AM"
+  },
+  {
+    "id": 7,
+    "day": "Monday",
+    "area": "Rizal Ave",
+    "waste_type": "General Waste",
+    "time_start": "8:00 AM",
+    "time_end": "11:00 AM"
+  },
+  {
+    "id": 8,
+    "day": "Tuesday",
+    "area": "Bonifacio Blvd",
+    "waste_type": "General Waste",
+    "time_start": "7:30 AM",
+    "time_end": "10:30 AM"
+  },
+  {
+    "id": 9,
+    "day": "Wednesday",
+    "area": "Mabini St",
+    "waste_type": "General Waste",
+    "time_start": "8:30 AM",
+    "time_end": "11:30 AM"
+  },
+  {
+    "id": 10,
+    "day": "Thursday",
+    "area": "Aguinaldo Rd",
+    "waste_type": "General Waste",
+    "time_start": "7:00 AM",
+    "time_end": "10:00 AM"
+  },
+  {
+    "id": 11,
+    "day": "Friday",
+    "area": "Del Pilar Ln",
+    "waste_type": "General Waste",
+    "time_start": "9:30 AM",
+    "time_end": "12:00 PM"
+  },
+  {
+    "id": 12,
+    "day": "Saturday",
+    "area": "Osmena Ave",
+    "waste_type": "Bulky Waste",
+    "time_start": "10:00 AM",
+    "time_end": "11:00 AM"
+  },
+  {
+    "id": 13,
+    "day": "Monday",
+    "area": "Lopez St",
+    "waste_type": "Recyclables",
+    "time_start": "6:00 AM",
+    "time_end": "9:00 AM"
+  },
+  {
+    "id": 14,
+    "day": "Tuesday",
+    "area": "Santos Blvd",
+    "waste_type": "General Waste",
+    "time_start": "8:00 AM",
+    "time_end": "11:00 AM"
+  },
+  {
+    "id": 15,
+    "day": "Wednesday",
+    "area": "Cruz Rd",
+    "waste_type": "General Waste",
+    "time_start": "7:30 AM",
+    "time_end": "10:30 AM"
+  },
+  {
+    "id": 16,
+    "day": "Thursday",
+    "area": "Reyes Ln",
+    "waste_type": "Recyclables",
+    "time_start": "6:30 AM",
+    "time_end": "9:30 AM"
+  },
+  {
+    "id": 17,
+    "day": "Friday",
+    "area": "Torres Ave",
+    "waste_type": "General Waste",
+    "time_start": "9:00 AM",
+    "time_end": "12:00 PM"
+  },
+  {
+    "id": 18,
+    "day": "Saturday",
+    "area": "Villanueva St",
+    "waste_type": "Bulky Waste",
+    "time_start": "10:30 AM",
+    "time_end": "11:30 AM"
+  },
+  {
+    "id": 19,
+    "day": "Monday",
+    "area": "Garcia Rd",
+    "waste_type": "General Waste",
+    "time_start": "8:30 AM",
+    "time_end": "11:30 AM"
+  },
+  {
+    "id": 20,
+    "day": "Tuesday",
+    "area": "Fernandez Ln",
+    "waste_type": "Recyclables",
+    "time_start": "6:00 AM",
+    "time_end": "9:00 AM"
+  }
+]

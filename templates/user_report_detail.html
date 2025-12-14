@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block title %}Report Details - SABTRACK{% endblock %}
+
+{% block content %}
+<div class="page-container">
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="header-content">
+            <h1>Report #{{ report.id }}</h1>
+            <p class="page-subtitle">Review and manage this waste management report</p>
+        </div>
+    </div>
+
+    <!-- Report Details Section -->
+    <section class="content-section">
+        <div class="report-details">
+            <div class="detail-row">
+                <label>Reporter:</label>
+                <span>{{ report.full_name }} ({{ report.email }})</span>
+            </div>
+            <div class="detail-row">
+                <label>Issue Type:</label>
+                <span>{{ report.issue_type }}</span>
+            </div>
+            <div class="detail-row">
+                <label>Location:</label>
+                <span>{{ report.location }}</span>
+            </div>
+            <div class="detail-row">
+                <label>Description:</label>
+                <span>{{ report.description }}</span>
+            </div>
+            <div class="detail-row">
+                <label>Date Submitted:</label>
+                <span>{{ report.created_at }}</span>
+            </div>
+            {% if report.photo_path %}
+            <div class="detail-row">
+                <label>Photo Evidence:</label>
+                <div class="photo-container">
+                    <img src="{{ url_for('static', filename='../uploads/' + report.photo_path) }}" alt="Report photo" class="report-photo">
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </section>
+
+    <!-- Status Update Section -->
+    <section class="content-section">
+        <div class="section-header">
+            <h2>Update Status</h2>
+        </div>
+        <form method="POST" class="form-card">
+            <div class="form-group">
+                <label for="status">Report Status</label>
+                <select id="status" name="status" required>
+                    <option value="pending" {% if report.status == 'pending' %}selected{% endif %}>Pending</option>
+                    <option value="in_progress" {% if report.status == 'in_progress' %}selected{% endif %}>In Progress</option>
+                    <option value="resolved" {% if report.status == 'resolved' %}selected{% endif %}>Resolved</option>
+                    <option value="rejected" {% if report.status == 'rejected' %}selected{% endif %}>Rejected</option>
+                </select>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Update Status & Notify Reporter</button>
+            </div>
+        </form>
+    </section>
+</div>
+{% endblock %}

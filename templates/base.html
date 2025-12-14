@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}SABTRACK - Barangay Sabang{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/layout.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/components.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+</head>
+<body>
+    <!-- Top navbar only shown for non-logged-in users -->
+    {% if not session.user_id %}
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">SABTRACK</div>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                <li><a href="{{ url_for('login') }}" class="login-btn">Login</a></li>
+                <li><a href="{{ url_for('register') }}" class="register-btn">Register</a></li>
+            </ul>
+        </div>
+    </nav>
+    {% endif %}
+
+    <!-- Sidebar layout only shown for logged-in users -->
+    {% if session.user_id %}
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">SABTRACK</div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="{{ url_for('dashboard') }}" class="sidebar-link{% if request.endpoint == 'dashboard' %} active{% endif %}">
+                    <span class="sidebar-icon">🏠</span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="{{ url_for('schedule') }}" class="sidebar-link{% if request.endpoint == 'schedule' %} active{% endif %}">
+                    <span class="sidebar-icon">🗓️</span>
+                    <span>Waste Schedule</span>
+                </a>
+                <a href="{{ url_for('report') if session.role != 'admin' else url_for('admin_reports') }}" class="sidebar-link{% if request.endpoint == 'report' or request.endpoint == 'admin_reports' or request.endpoint == 'admin_report_detail' %} active{% endif %}">
+                    <span class="sidebar-icon">{% if session.role == 'admin' %}📊{% else %}⚠️{% endif %}</span>
+                    <span>{% if session.role == 'admin' %}Manage Reports{% else %}Report Issue{% endif %}</span>
+                </a>
+                <a href="{{ url_for('awareness') }}" class="sidebar-link{% if request.endpoint == 'awareness' %} active{% endif %}">
+                    <span class="sidebar-icon">🌍</span>
+                    <span>Awareness Hub</span>
+                </a>
+                {% if session.role != 'admin' %}
+                <a href="{{ url_for('announcements') }}" class="sidebar-link{% if request.endpoint == 'announcements' %} active{% endif %}">
+                    <span class="sidebar-icon">📣</span>
+                    <span>Announcements</span>
+                </a>
+                {% endif %}
+                {% if session.role == 'admin' %}
+                <a href="{{ url_for('admin_new_announcement') }}" class="sidebar-link{% if request.endpoint == 'admin_new_announcement' %} active{% endif %}">
+                    <span class="sidebar-icon">📢</span>
+                    <span>Post Announcement</span>
+                </a>
+                {% endif %}
+                <a href="{{ url_for('profile') }}" class="sidebar-link{% if request.endpoint == 'profile' %} active{% endif %}">
+                    <span class="sidebar-icon">👤</span>
+                    <span>Profile</span>
+                </a>
+
+            </nav>
+            <div class="sidebar-footer">
+                <a href="{{ url_for('logout') }}" class="sidebar-link logout-link">
+                    <span class="sidebar-icon">🚪</span>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+        <main class="dashboard-main">
+    {% endif %}
+
+    <main{% if not session.user_id %} class="main-content"{% endif %}>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Close dashboard layout for logged-in users -->
+    {% if session.user_id %}
+        </main>
+    </div>
+    {% endif %}
+
+    <!-- Footer only shown for non-logged-in users -->
+    {% if not session.user_id %}
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 SABTRACK Project - All Rights Reserved</p>
+            <p>Barangay Sabang, Lipa City, Philippines</p>
+        </div>
+    </footer>
+    {% endif %}
+</body>
+</html>

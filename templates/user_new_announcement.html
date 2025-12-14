@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Post Announcement - SABTRACK{% endblock %}
+
+{% block content %}
+<div class="page-container">
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="header-content">
+            <h1>Post New Announcement</h1>
+            <p class="page-subtitle">Create and send announcements to all registered residents</p>
+        </div>
+    </div>
+
+    <!-- Announcement Form Section -->
+    <section class="content-section">
+        <div class="form-card">
+            <form method="POST" class="announcement-form">
+                <div class="form-group">
+                    <label for="title">Announcement Title *</label>
+                    <input type="text" id="title" name="title" placeholder="Enter a clear, concise title for your announcement" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="content">Announcement Content *</label>
+                    <textarea id="content" name="content" rows="8" placeholder="Write your announcement message here. Be clear and informative..." required></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Post & Send to All Residents</button>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>
+{% endblock %}

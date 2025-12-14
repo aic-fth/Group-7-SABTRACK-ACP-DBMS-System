@@ -1,0 +1,102 @@
+<div class="modern-announcements-block">
+    <!-- About Section -->
+    <div class="about-section">
+        <div class="about-content">
+            <h3 class="about-title">📢 Stay Connected</h3>
+            <p class="about-description">Stay informed about important updates, waste collection schedules, and community initiatives from Barangay Sabang.</p>
+        </div>
+    </div>
+
+    <!-- Statistics Section -->
+    <div class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">📊</div>
+                <div class="stat-content">
+                    <div class="stat-number">{{ announcements|length }}</div>
+                    <div class="stat-label">Total Announcements</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🕒</div>
+                <div class="stat-content">
+                    <div class="stat-number">{{ announcements|last.created_at|date:"M d" if announcements else "N/A" }}</div>
+                    <div class="stat-label">Last Updated</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🔄</div>
+                <div class="stat-content">
+                    <div class="stat-number">{{ announcements|length }}</div>
+                    <div class="stat-label">No Updates</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Announcements Section -->
+    {% if announcements %}
+        <div class="announcements-section">
+            <h3 class="section-title">📋 Latest Announcements</h3>
+            <div class="announcements-list">
+                {% for announcement in announcements %}
+                <div class="announcement-card {% if announcement.is_new %}new-announcement{% endif %} {% if announcement.is_important %}important-announcement{% endif %}">
+                    {% if announcement.is_new %}
+                    <div class="announcement-badge new-badge">NEW</div>
+                    {% endif %}
+                    {% if announcement.is_important %}
+                    <div class="announcement-badge important-badge">IMPORTANT</div>
+                    {% endif %}
+                    <div class="announcement-header">
+                        <h4 class="announcement-title">{{ announcement.title }}</h4>
+                        <span class="announcement-date">{{ announcement.created_at | date:"M d, Y" }}</span>
+                    </div>
+                    <div class="announcement-content">
+                        <p class="announcement-description">{{ announcement.content | truncatewords:30 }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% else %}
+        <div class="no-announcements-section">
+            <div class="no-announcements-card">
+                <div class="no-announcements-icon">📢</div>
+                <h3>No Announcements Yet</h3>
+                <p>There are no announcements available at the moment. Check back soon for updates!</p>
+            </div>
+        </div>
+    {% endif %}
+
+    <!-- Helpful Tips Section -->
+    <div class="tips-section">
+        <h3 class="section-title">💡 Preparation Tips</h3>
+        <div class="tips-card">
+            <ul class="tips-list">
+                <li><span class="tip-check">✓</span> Sort your waste into appropriate bins before collection day</li>
+                <li><span class="tip-check">✓</span> Ensure bins are placed at the curb by 7:00 AM</li>
+                <li><span class="tip-check">✓</span> Keep recyclables clean and dry</li>
+                <li><span class="tip-check">✓</span> Don't mix hazardous materials with regular waste</li>
+                <li><span class="tip-check">✓</span> Reduce waste by composting organic materials</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Collection Schedule Section -->
+    <div class="schedule-section">
+        <h3 class="section-title">🗓️ Collection Schedule</h3>
+        <div class="schedule-card">
+            <div class="schedule-content">
+                <div class="schedule-item">
+                    <span class="schedule-label">Regular:</span>
+                    <span class="schedule-value">Mon & Thu</span>
+                </div>
+                <div class="schedule-item">
+                    <span class="schedule-label">Bulky Items:</span>
+                    <span class="schedule-value">Saturday</span>
+                </div>
+            </div>
+            <a href="/schedule" class="schedule-btn">View Full Schedule →</a>
+        </div>
+    </div>
+</div>

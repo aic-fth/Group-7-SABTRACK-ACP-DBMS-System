@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}Announcements - SABTRACK{% endblock %}
+
+{% block content %}
+<div class="page-container">
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="header-content">
+            <h1>Announcements</h1>
+            <p class="page-subtitle">Stay updated with the latest news from your barangay</p>
+        </div>
+        <div class="header-actions">
+            {% if session.get('role') == 'admin' %}
+            <a href="{{ url_for('admin_new_announcement') }}" class="btn btn-primary">
+                📢 Post Announcement
+            </a>
+            {% endif %}
+            <a href="{{ url_for('notifications') }}" class="btn btn-secondary notification-settings-btn">
+                🔔 Notifications
+            </a>
+        </div>
+    </div>
+
+    <!-- Announcements Section -->
+    {% if announcements %}
+    <section class="content-section">
+        <div class="announcements-list">
+            {% for announcement in announcements %}
+            <div class="announcement-item">
+                <h3>{{ announcement.title }}</h3>
+                <p>{{ announcement.content }}</p>
+                <div class="announcement-footer">
+                    <small>Posted on {{ announcement.created_at }}</small>
+                    {% if session.get('role') == 'admin' %}
+                    <form method="POST" action="{{ url_for('admin_delete_announcement', announcement_id=announcement.id) }}" style="display: inline;" onsubmit="return confirm('Are you sure you want to delete this announcement?');">
+                        <button type="submit" class="btn btn-danger btn-sm" style="margin-left: 10px;">🗑️ Delete</button>
+                    </form>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    {% else %}
+    <div class="empty-state">
+        <div class="empty-state-icon">📢</div>
+        <h3>No Announcements Yet</h3>
+        <p>There are no announcements available at the moment. Check back soon for updates!</p>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

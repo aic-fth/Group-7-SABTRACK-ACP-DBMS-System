@@ -1,0 +1,276 @@
+{% extends "base.html" %}
+
+{% block title %}Report Garbage Issues - SABTRACK{% endblock %}
+
+{% block content %}
+<style>
+.uploaded-photos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.photo-container {
+    position: relative;
+    display: inline-block;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.uploaded-image {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    display: block;
+}
+
+.delete-photo-btn {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 20px;
+    height: 20px;
+    border-radius: 0;
+    background: #dc2626;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.delete-photo-btn:hover {
+    background: #b91c1c;
+}
+
+.delete-photo-btn i {
+    margin: 0;
+}
+</style>
+<div class="page-container">
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="header-content">
+            <h1>Report Garbage Issues</h1>
+            <p class="page-subtitle">Help keep our community clean by reporting garbage and waste issues. Together we can make a difference.</p>
+        </div>
+        <div class="header-actions">
+            <a href="{{ url_for('notifications') }}" class="btn btn-secondary notification-settings-btn">
+                🔔 Notifications
+            </a>
+        </div>
+    </div>
+
+    <!-- Report Form Section -->
+    <section class="content-section">
+        <div class="form-card">
+            <form method="POST" enctype="multipart/form-data" class="report-form">
+                <div class="form-group">
+                    <label for="issue_type">Issue Type *</label>
+                    <select id="issue_type" name="issue_type" required>
+                        <option value="">Select Issue Type</option>
+                        <option value="Illegal Dumping">Illegal Dumping</option>
+                        <option value="Overflowing Bins">Overflowing Bins</option>
+                        <option value="Uncollected Waste">Uncollected Waste</option>
+                        <option value="Hazardous Waste">Hazardous Waste</option>
+                        <option value="Blocked Collection">Blocked Collection</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Location *</label>
+                    <input type="text" id="location" name="location" placeholder="Enter address or coordinates where the issue is located" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description *</label>
+                    <textarea id="description" name="description" rows="4" placeholder="Describe the issue in detail. Include any relevant information that will help resolve it." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="photo">Photo Evidence</label>
+                    <div class="photo-upload-area" id="photo-upload">
+                        <div class="upload-content">
+                            <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                            <p>Drag and drop photos here or <span class="upload-link">browse files</span></p>
+                            <small>Accepted formats: PNG, JPG, JPEG, GIF (Max 16MB)</small>
+                        </div>
+                        <input type="file" id="photo" name="photo" accept="image/*" multiple style="display: none;">
+                    </div>
+                    <div class="uploaded-photos" id="uploaded-photos"></div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Submit Report</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Recent Reports Panel -->
+    <section class="content-section">
+        <div class="section-header">
+            <h2>Recent Reports</h2>
+        </div>
+        <div class="recent-reports-grid">
+            <!-- Sample recent reports -->
+            <div class="report-card">
+                <div class="report-header">
+                    <span class="report-type">Illegal Dumping</span>
+                    <span class="report-status status-pending">Pending</span>
+                </div>
+                <p class="report-description">Large pile of construction waste dumped on street corner near Barangay Hall.</p>
+                <div class="report-meta">
+                    <span class="report-date">2 hours ago</span>
+                    <span class="report-location">Barangay Sabang</span>
+                </div>
+            </div>
+
+            <div class="report-card">
+                <div class="report-header">
+                    <span class="report-type">Overflowing Bins</span>
+                    <span class="report-status status-resolved">Resolved</span>
+                </div>
+                <p class="report-description">Public waste bin at the park is overflowing with plastic bottles and food waste.</p>
+                <div class="report-meta">
+                    <span class="report-date">1 day ago</span>
+                    <span class="report-location">Central Park</span>
+                </div>
+            </div>
+
+            <div class="report-card">
+                <div class="report-header">
+                    <span class="report-type">Uncollected Waste</span>
+                    <span class="report-status status-in-progress">In Progress</span>
+                </div>
+                <p class="report-description">Household waste has not been collected for 3 days in Zone A.</p>
+                <div class="report-meta">
+                    <span class="report-date">3 days ago</span>
+                    <span class="report-location">Zone A, Barangay Sabang</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reporting Tips Card -->
+    <div class="tips-card">
+        <div class="card-icon">
+            <i class="fas fa-lightbulb"></i>
+        </div>
+        <h3>Reporting Tips</h3>
+        <ul class="tips-list">
+            <li>Be specific about the location and type of issue</li>
+            <li>Include photos to help authorities identify the problem quickly</li>
+            <li>Provide details about when the issue started and its severity</li>
+            <li>Report issues as soon as you notice them for faster resolution</li>
+            <li>Follow up on your reports to track progress</li>
+        </ul>
+        <div class="tips-note">
+            <p><strong>Note:</strong> All reports are anonymous unless you choose to provide contact information. Your reports help improve our community's waste management.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+// Photo upload drag and drop functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const uploadArea = document.getElementById('photo-upload');
+    const fileInput = document.getElementById('photo');
+    const uploadLink = document.querySelector('.upload-link');
+    const uploadedPhotos = document.getElementById('uploaded-photos');
+
+    // Prevent default drag behaviors
+    ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+        uploadArea.addEventListener(eventName, preventDefaults, false);
+        document.body.addEventListener(eventName, preventDefaults, false);
+    });
+
+    // Highlight drop area when item is dragged over it
+    ['dragenter', 'dragover'].forEach(eventName => {
+        uploadArea.addEventListener(eventName, highlight, false);
+    });
+
+    ['dragleave', 'drop'].forEach(eventName => {
+        uploadArea.addEventListener(eventName, unhighlight, false);
+    });
+
+    // Handle dropped files
+    uploadArea.addEventListener('drop', handleDrop, false);
+
+    // Handle click to browse
+    uploadLink.addEventListener('click', () => fileInput.click());
+    uploadArea.addEventListener('click', () => fileInput.click());
+
+    // Handle file selection
+    fileInput.addEventListener('change', function(e) {
+        handleFiles(e.target.files);
+    });
+
+    function preventDefaults(e) {
+        e.preventDefault();
+        e.stopPropagation();
+    }
+
+    function highlight() {
+        uploadArea.classList.add('dragover');
+    }
+
+    function unhighlight() {
+        uploadArea.classList.remove('dragover');
+    }
+
+    function handleDrop(e) {
+        const dt = e.dataTransfer;
+        const files = dt.files;
+        handleFiles(files);
+    }
+
+    function handleFiles(files) {
+        [...files].forEach(previewFile);
+    }
+
+    function previewFile(file) {
+        if (!file.type.startsWith('image/')) return;
+
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onloadend = function() {
+            const photoContainer = document.createElement('div');
+            photoContainer.className = 'photo-container';
+
+            const img = document.createElement('img');
+            img.src = reader.result;
+            img.className = 'uploaded-image';
+
+            const deleteBtn = document.createElement('button');
+            deleteBtn.type = 'button';
+            deleteBtn.className = 'delete-photo-btn';
+            deleteBtn.innerHTML = '<i class="fas fa-times"></i>';
+            deleteBtn.title = 'Remove photo';
+            deleteBtn.onclick = function() {
+                photoContainer.remove();
+                // Remove file from input if needed
+                updateFileInput();
+            };
+
+            photoContainer.appendChild(img);
+            photoContainer.appendChild(deleteBtn);
+            uploadedPhotos.appendChild(photoContainer);
+        };
+    }
+
+    function updateFileInput() {
+        // This function would need to be implemented to remove files from the FileList
+        // For now, we'll just clear the input and let users reselect
+        // In a more complex implementation, you'd maintain a separate array of selected files
+    }
+});
+</script>
+{% endblock %}

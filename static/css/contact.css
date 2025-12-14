@@ -1,0 +1,338 @@
+/* --- Contact Hero Section --- */
+.contact-hero {
+    background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+    color: white;
+    padding: 80px 20px; /* aligned with about-hero */
+    text-align: center;
+}
+
+.contact-hero h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+.contact-hero p {
+    font-size: 1.2rem;
+    opacity: 0.95;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* --- Contact Info Section --- */
+.contact-info-section {
+    padding: 20px 20px 10px 20px;
+    background-color: var(--gray-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+    color: black;
+    letter-spacing: -0.5px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-card {
+    background: var(--red);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.card-header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    color: var(--white);
+    padding: 1.5rem 2rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.card-header .card-icon {
+    font-size: 2rem;
+}
+
+.card-header h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -0.2px;
+    color: #333;
+}
+
+.card-content {
+    padding: 2rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.contact-item:last-child {
+    margin-bottom: 0;
+}
+
+.item-icon {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+}
+
+.contact-item strong {
+    display: block;
+    color: var(--text-color);
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    font-size: 0.95rem;
+}
+
+.contact-item p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.contact-item a {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+.support-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0 0;
+}
+
+.support-list li {
+    padding: 0.25rem 0;
+    color: var(--text-light);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.support-list li::before {
+    content: "✓";
+    color: var(--primary-color);
+    font-weight: 900;
+    font-size: 0.8rem;
+}
+
+
+/* --- Emergency Hotlines Section --- */
+.emergency-section {
+    padding: 0 20px 20px 20px;
+    background-color: #f9fafb;
+}
+
+.emergency-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 4rem;
+    font-weight: 900;
+}
+
+.emergency-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.emergency-card {
+    background: linear-gradient(135deg, var(--primary-light) 0%, #fff5f5 100%);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 2px solid #dc2626;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.1);
+}
+
+.emergency-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(220, 38, 38, 0.2);
+}
+
+.emergency-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.emergency-name {
+    margin-bottom: 1rem;
+}
+
+.emergency-number {
+    font-size: 1.2rem;
+    color: #dc2626;
+    font-weight: 700;
+}
+
+/* --- Contact Form Section --- */
+.contact-form-section {
+    padding: 10px 20px;
+    margin-bottom: 3rem;
+    background-color: var(--gray-light);
+}
+
+.form-container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.contact-form {
+    background: var(--white);
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--border-color);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.875rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    background-color: var(--gray-light);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background-color: var(--white);
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: 2px solid var(--primary-color);
+    padding: 0.875rem 2rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+}
+
+.full-width {
+    width: 100%;
+}
+
+
+.contact-form label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  color: var(--text-color);
+  font-size: 0.9rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background-color: var(--white);
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.15);
+  
+}
+
+.full-width {
+  width: 100%;
+  padding: 0.9rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 6px;
+  margin-top: 1rem;
+}

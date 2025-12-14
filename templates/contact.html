@@ -1,0 +1,155 @@
+ {% extends "base.html" %}
+
+{% block title %}Contact - SABTRACK{% endblock %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+
+{% block content %}
+<!-- Hero Section -->
+<section class="contact-hero">
+  <h1>Contact Us</h1>
+  <p>Have questions? We're here to help. Reach out through any of our channels below.</p>
+</section>
+
+
+<!-- Contact Info Section -->
+<section class="contact-info-section">
+  <div class="container">
+    <h2 class="section-title">Contact Information</h2>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="card-header">
+          <div class="card-icon">🏛️</div>
+          <h3>Barangay Sabang Hall</h3>
+        </div>
+        <div class="card-content">
+          <div class="contact-item">
+            <div class="item-icon">📍</div>
+            <div>
+              <strong>Address</strong>
+              <p>Camagong St. 4217<br>Lipa City, Philippines</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="item-icon">📞</div>
+            <div>
+              <strong>Contact</strong>
+              <p>09667447085<br>09175518272</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="item-icon">📧</div>
+            <div>
+              <strong>Email</strong>
+              <p><a href="mailto:brgy.sabang2016@gmail.com">brgy.sabang2016@gmail.com</a></p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="item-icon">🕐</div>
+            <div>
+              <strong>Hours</strong>
+              <p>Mon - Fri, 8:00 AM - 5:00 PM</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="card-header">
+          <div class="card-icon">🏛️</div>
+          <h3>Lipa City Hall</h3>
+        </div>
+        <div class="card-content">
+          <div class="contact-item">
+            <div class="item-icon">📍</div>
+            <div>
+              <strong>Address</strong>
+              <p>2nd Floor, New City Hall Building<br>Brgy. Marawoy, Lipa City, Batangas</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="item-icon">📞</div>
+            <div>
+              <strong>Contact</strong>
+              <p>0927 053 3926</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="item-icon">📧</div>
+            <div>
+              <strong>Email</strong>
+              <p><a href="mailto:mayorericafricalipacity@gmail.com">mayorericafricalipacity@gmail.com</a></p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="item-icon">🕐</div>
+            <div>
+              <strong>Hours</strong>
+              <p>Mon - Fri, 8:00 AM - 5:00 PM</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="card-header">
+          <div class="card-icon">💻</div>
+          <h3>SABTRACK Support</h3>
+        </div>
+        <div class="card-content">
+          <div class="contact-item">
+            <div class="item-icon">📧</div>
+            <div>
+              <strong>Technical Support</strong>
+              <p><a href="mailto:sabtrack.system@gmail.com">sabtrack.system@gmail.com</a></p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="item-icon">📋</div>
+            <div>
+              <strong>When emailing, include:</strong>
+              <ul class="support-list">
+                <li>✓ Your username</li>
+                <li>✓ Issue description</li>
+                <li>✓ Screenshots (if applicable)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Emergency Hotlines Section -->
+<section style="padding: 80px 20px; background-color: #f9fafb;">
+  <div class="container">
+    <h2 style="text-align: center; font-size: 2rem; margin-bottom: 4rem; font-weight: 900;">Emergency Response Contacts</h2>
+    <!-- Updated emergency hotlines using service card grid -->
+    <div class="services-grid" style="max-width: 900px; margin: 0 auto;">
+      <div class="service-card" style="border: 2px solid #dc2626;">
+        <div style="font-size: 2rem; margin-bottom: 1rem;">🚨</div>
+        <h3 style="margin-bottom: 1rem;">LIPA CDRRMO</h3>
+        <p style="font-size: 1.2rem; color: #dc2626; font-weight: 700;">0915-463-5005</p>
+      </div>
+      <div class="service-card" style="border: 2px solid #dc2626;">
+        <div style="font-size: 2rem; margin-bottom: 1rem;">🔥</div>
+        <h3 style="margin-bottom: 1rem;">Fire Bureau</h3>
+        <p style="font-size: 1.2rem; color: #dc2626; font-weight: 700;">0927-575-8065</p>
+      </div>
+      <div class="service-card" style="border: 2px solid #dc2626;">
+        <div style="font-size: 2rem; margin-bottom: 1rem;">👮</div>
+        <h3 style="margin-bottom: 1rem;">Police</h3>
+        <p style="font-size: 1.2rem; color: #dc2626; font-weight: 700;">0977-744-9692</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section class="cta-banner">
+  <div class="cta-content">
+    <h2>Have More Questions?</h2>
+    <p>We're always here to help. Don't hesitate to reach out through any of our contact channels above.</p>
+  </div>
+</section>
+{% endblock %}

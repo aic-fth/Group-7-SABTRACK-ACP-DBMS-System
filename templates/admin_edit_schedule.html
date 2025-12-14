@@ -1,0 +1,177 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Waste Collection Schedule - SABTRACK{% endblock %}
+
+{% block content %}
+<main class="main-content">
+    <!-- Page Header -->
+    <div class="welcome-section">
+        <h2>Edit Waste Collection Schedule</h2>
+        <p>Update the collection schedule details below.</p>
+    </div>
+
+    <div class="dashboard-container">
+        <!-- Form Section -->
+        <section class="content-section">
+            <div class="form-container">
+                <form method="POST" class="admin-form">
+                    <div class="form-group">
+                        <label for="day" class="form-label">Day of the Week</label>
+                        <select id="day" name="day" class="form-input" required>
+                            <option value="Monday" {% if schedule.day == 'Monday' %}selected{% endif %}>Monday</option>
+                            <option value="Tuesday" {% if schedule.day == 'Tuesday' %}selected{% endif %}>Tuesday</option>
+                            <option value="Wednesday" {% if schedule.day == 'Wednesday' %}selected{% endif %}>Wednesday</option>
+                            <option value="Thursday" {% if schedule.day == 'Thursday' %}selected{% endif %}>Thursday</option>
+                            <option value="Friday" {% if schedule.day == 'Friday' %}selected{% endif %}>Friday</option>
+                            <option value="Saturday" {% if schedule.day == 'Saturday' %}selected{% endif %}>Saturday</option>
+                            <option value="Sunday" {% if schedule.day == 'Sunday' %}selected{% endif %}>Sunday</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="area" class="form-label">Area/Location</label>
+                        <input type="text" id="area" name="area" class="form-input" value="{{ schedule.area }}" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="waste_type" class="form-label">Waste Type</label>
+                        <select id="waste_type" name="waste_type" class="form-input" required>
+                            <option value="General Waste" {% if schedule.waste_type == 'General Waste' %}selected{% endif %}>General Waste</option>
+                            <option value="Bulky Waste" {% if schedule.waste_type == 'Bulky Waste' %}selected{% endif %}>Bulky Waste</option>
+                            <option value="Organic Waste" {% if schedule.waste_type == 'Organic Waste' %}selected{% endif %}>Organic Waste</option>
+                            <option value="Recyclables" {% if schedule.waste_type == 'Recyclables' %}selected{% endif %}>Recyclables</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="time_start" class="form-label">Start Time</label>
+                            <input type="time" id="time_start" name="time_start" class="form-input" value="{{ schedule.time_start }}" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="time_end" class="form-label">End Time</label>
+                            <input type="time" id="time_end" name="time_end" class="form-input" value="{{ schedule.time_end }}" required>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Update Schedule</button>
+                        <a href="{{ url_for('schedule') }}" class="btn btn-secondary">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+</main>
+
+<style>
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.admin-form {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.form-label {
+    display: block;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    justify-content: flex-end;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.15s ease;
+    cursor: pointer;
+    border: none;
+    font-size: 0.875rem;
+}
+
+.btn-primary {
+    background-color: #dc2626;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: #b91c1c;
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background-color: #f3f4f6;
+    color: #374151;
+    border: 1px solid #d1d5db;
+}
+
+.btn-secondary:hover {
+    background-color: #e5e7eb;
+}
+
+@media (max-width: 768px) {
+    .admin-form {
+        padding: 1.5rem;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+</style>
+{% endblock %}

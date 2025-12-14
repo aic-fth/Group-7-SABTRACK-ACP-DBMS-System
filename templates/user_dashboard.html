@@ -1,0 +1,198 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Dashboard - SABTRACK{% endblock %}
+
+{% block content %}
+<main class="main-content">
+    <!-- Welcome Message -->
+    <div class="welcome-section">
+        <h2>Welcome back, Admin {{ user.full_name }}!</h2>
+        <p>Here's what's happening in your barangay waste management system today.</p>
+    </div>
+
+    <div class="dashboard-container">
+        <!-- Page Header -->
+        <div class="page-header">
+            <div class="header-content">
+                <h1>Admin Dashboard</h1>
+                <p class="page-subtitle">Manage your barangay waste management system</p>
+            </div>
+            <div class="header-actions">
+                <a href="{{ url_for('notifications') }}" class="btn btn-secondary notification-settings-btn">
+                    🔔 Notifications
+                </a>
+            </div>
+        </div>
+
+        <!-- Next Waste Collection Card - Prominent -->
+        <div class="dashboard-card next-collection-card featured-card">
+            <div class="card-icon">
+                <i class="fas fa-trash-alt"></i>
+            </div>
+            <div class="card-content">
+                <h3>Next Waste Collection</h3>
+                <p>Tomorrow at 8:00 AM - General Waste</p>
+                <div class="collection-details">
+                    <span class="location">Barangay Sabang</span>
+                    <a href="{{ url_for('schedule') }}" class="reminder">View Schedule</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Community Stats Section -->
+        <section class="stats-section">
+            <div class="section-header">
+                <h2>Community Stats <i class="fas fa-bell notification-icon"></i></h2>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="stat-content">
+                        <p>Pending Reports <span class="stat-number">{{ pending_reports }}</span></p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-content">
+                        <p>Total Users <span class="stat-number">{{ users_count }}</span></p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="stat-content">
+                        <p>Resolved Issues <span class="stat-number">{{ resolved_issues }}</span></p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="stat-content">
+                        <p>Reports This Month <span class="stat-number">{{ reports_this_month }}</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Two Column Layout for Sections -->
+        <div class="dashboard-grid">
+            <!-- Left Column -->
+            <div class="dashboard-column">
+
+
+                <!-- Recent Reports Section -->
+                <section class="content-section">
+                    <div class="section-header">
+                        <h2>Recent Reports <i class="fas fa-bell notification-icon"></i></h2>
+                    </div>
+                    <div class="reports-list">
+                        <!-- Sample reports - replace with actual data -->
+                        <div class="report-item">
+                            <div class="report-icon">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div class="report-content">
+                                <h4>Overflowing Bins</h4>
+                                <p>Reported 2 hours ago</p>
+                                <span class="status pending">Pending</span>
+                            </div>
+                        </div>
+                        <div class="report-item">
+                            <div class="report-icon">
+                                <i class="fas fa-dumpster"></i>
+                            </div>
+                            <div class="report-content">
+                                <h4>Illegal Dumping</h4>
+                                <p>Reported yesterday</p>
+                                <span class="status resolved">Resolved</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-footer">
+                        <a href="{{ url_for('admin_reports') }}" class="btn btn-secondary">Manage All Reports</a>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Column -->
+            <div class="dashboard-column">
+                <!-- Collection Calendar -->
+                <section class="content-section">
+                    <div class="section-header">
+                        <h2>Collection Calendar <i class="fas fa-bell notification-icon"></i></h2>
+                    </div>
+                    <div class="calendar-grid">
+                        <div class="calendar-item today">
+                            <div class="date">Today</div>
+                            <div class="collection-type">General Waste</div>
+                            <div class="time">8:00 AM</div>
+                        </div>
+                        <div class="calendar-item">
+                            <div class="date">Tomorrow</div>
+                            <div class="collection-type">Recyclables</div>
+                            <div class="time">9:00 AM</div>
+                        </div>
+                        <div class="calendar-item">
+                            <div class="date">Friday</div>
+                            <div class="collection-type">Organic Waste</div>
+                            <div class="time">7:00 AM</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Admin Menu Section -->
+                <section class="content-section">
+                    <div class="section-header">
+                        <h2>Management Tools</h2>
+                    </div>
+                    <div class="admin-menu">
+                        <a href="{{ url_for('admin_reports') }}" class="menu-card">
+                            <div class="menu-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <div class="menu-content">
+                                <h3>Manage Reports</h3>
+                                <p>View and manage garbage reports</p>
+                            </div>
+                        </a>
+                        <a href="{{ url_for('admin_new_announcement') }}" class="menu-card">
+                            <div class="menu-icon">
+                                <i class="fas fa-bullhorn"></i>
+                            </div>
+                            <div class="menu-content">
+                                <h3>Post Announcement</h3>
+                                <p>Create and send announcements to residents</p>
+                            </div>
+                        </a>
+                        <a href="{{ url_for('notification_settings') }}" class="menu-card">
+                            <div class="menu-icon">
+                                <i class="fas fa-bell"></i>
+                            </div>
+                            <div class="menu-content">
+                                <h3>Manage Notifications</h3>
+                                <p>Configure notification settings</p>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Admin Tip of the Day -->
+        <div class="eco-tip-card">
+            <div class="card-icon">
+                <i class="fas fa-user-shield"></i>
+            </div>
+            <h3>Admin Tip of the Day</h3>
+            <p>Regular monitoring of waste collection reports helps maintain community cleanliness and prevents environmental issues. Check pending reports daily to ensure timely resolution.</p>
+            <a href="{{ url_for('admin_reports') }}" class="btn btn-secondary">View Reports</a>
+        </div>
+    </div>
+</main>
+{% endblock %}

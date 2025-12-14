@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}SABTRACK - Waste Management System{% endblock %}
+
+{% block content %}
+<!-- Enhanced hero section with modern design -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>SABTRACK</h1>
+    <p class="hero-subtitle">Smart Waste Management for a Sustainable Community</p>
+    <p class="hero-description">Your Partner in Keeping Barangay Sabang Clean, Safe, and Environmentally Responsible</p>
+    <div class="hero-buttons">
+      {% if not session.user_id %}
+        <a href="{{ url_for('register') }}" class="btn btn-primary btn-large">Get Started</a>
+        <a href="{{ url_for('about') }}" class="btn btn-outline btn-large">Learn More</a>
+      {% else %}
+        <a href="{{ url_for('dashboard') }}" class="btn btn-primary btn-large">Go to Dashboard</a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section class="services-section">
+  <div class="container">
+    <h2>What We Offer</h2>
+    <p>Comprehensive waste management solutions designed for community engagement and environmental sustainability</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">📅</div>
+        <h3>Waste Collection Schedule</h3>
+        <p>Never miss a collection day. Get precise schedules and timely reminders for your area.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📝</div>
+        <h3>Report Issues</h3>
+        <p>Report garbage and waste problems in your community. Track status in real-time with photo uploads.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🌱</div>
+        <h3>Awareness Hub</h3>
+        <p>Learn about waste segregation and sustainability. Stay informed with regular environmental tips.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔔</div>
+        <h3>Instant Notifications</h3>
+        <p>Email alerts for schedules, updates, and announcements. Stay connected with your barangay.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action Banner -->
+<section class="cta-banner">
+  <div class="cta-content">
+    <h2>Join the Waste Management Revolution</h2>
+    <p>Every action counts. Together, we can create a cleaner, more sustainable community for everyone.</p>
+    {% if not session.user_id %}
+      <a href="{{ url_for('register') }}" class="btn btn-white">Get Started Today</a>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

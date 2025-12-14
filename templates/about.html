@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block title %}About - SABTRACK{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+
+<!-- Hero Section -->
+<div class="about-hero">
+    <div class="container">
+        <h1>About SABTRACK</h1>
+        <p>Building a Cleaner, Smarter Community Through Collaborative Waste Management</p>
+    </div>
+</div>
+
+<div class="about-content">
+    <!-- Mission -->
+    <div class="about-section">
+        <h2>Our Mission</h2>
+        <p>SABTRACK is a web-based waste management system for Barangay Sabang that empowers residents and officials to collaborate on tracking, reporting, and reducing solid waste in the community.</p>
+    </div>
+
+    <!-- Vision -->
+    <div class="about-section">
+        <h2>Our Vision</h2>
+        <p>Born out of the need for a more efficient and transparent approach to managing waste, SABTRACK provides a centralized solution that bridges the gap between the community and local authorities. We envision a Barangay Sabang where waste is managed responsibly, efficiently, and sustainably.</p>
+    </div>
+
+    <!-- Goals -->
+    <div class="about-section">
+        <h2>Our Goals</h2>
+        <ul>
+            <li>Ensure timely waste collection and reduce missed pickups</li>
+            <li>Enable residents to report waste issues such as uncollected trash or illegal dumping</li>
+            <li>Encourage community participation through awareness and education</li>
+            <li>Educate the public via our comprehensive Awareness Hub</li>
+            <li>Provide officials with real-time data to make informed decisions</li>
+        </ul>
+    </div>
+
+    <!-- SDG Section -->
+    <section class="services-section">
+      <div class="container">
+        <h2>Sustainable Development Goals</h2>
+        <p>This project aligns with the UN Sustainable Development Goals and our community's vision for a cleaner, more sustainable future.</p>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="sdg-number">🏙️ 11</div>
+            <h3>Sustainable Cities & Communities</h3>
+            <p>Making our barangay a cleaner, safer, and more sustainable place to live for all residents.</p>
+          </div>
+          <div class="service-card">
+            <div class="sdg-number">♻️ 12</div>
+            <h3>Responsible Consumption & Production</h3>
+            <p>Promoting sustainable waste management and reducing waste through community action.</p>
+          </div>
+          <div class="service-card">
+            <div class="sdg-number">🌱 13</div>
+            <h3>Climate Action</h3>
+            <p>Reducing greenhouse gas emissions through proper waste management practices.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Highlight Box -->
+    <div class="about-highlight">
+      By combining technology and community action, SABTRACK redefines local waste management into a more participatory and eco-conscious system.
+    </div>
+
+</div>
+
+{% endblock %}

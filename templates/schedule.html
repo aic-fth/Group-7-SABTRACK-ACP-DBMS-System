@@ -1,0 +1,345 @@
+{% extends "base.html" %}
+
+{% block title %}Waste Collection Schedule - SABTRACK{% endblock %}
+
+{% block content %}
+<div class="page-container">
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="header-content">
+            <h1>🗓️ Waste Collection Schedule</h1>
+            <p class="page-subtitle">Find out when waste collection happens in your area</p>
+        </div>
+        {% if session.role != 'admin' %}
+        <div class="header-actions">
+            <a href="{{ url_for('notification_settings') }}" class="btn btn-secondary notification-settings-btn">
+                🔔 Notifications
+            </a>
+        </div>
+        {% endif %}
+
+
+    </div>
+
+    <!-- Green Info Banner -->
+    <div class="info-banner">
+        <div class="banner-icon">
+            <i class="fas fa-info-circle"></i>
+        </div>
+        <div class="banner-content">
+            <h3>Collection Schedule Information</h3>
+            <p>Stay updated with your area's waste collection schedule. Set reminders to ensure your waste is collected on time.</p>
+        </div>
+    </div>
+
+    <!-- Schedule Table Section -->
+    <section class="content-section">
+        <div class="data-table-container">
+            <table class="minimal-schedule-table">
+                <thead>
+                    <tr>
+                        <th class="day-column">Day</th>
+                        <th class="area-column">Area</th>
+                        <th class="waste-type-column">Waste Type</th>
+                        <th class="time-column">Time</th>
+                        <th class="action-column">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for schedule in schedules %}
+                    <tr class="schedule-row">
+                        <td class="day-cell">
+                            <div class="day-content">
+                                <span class="day-short">{{ schedule.day[:3] }}</span>
+                                <span class="day-full">{{ schedule.day }}</span>
+                            </div>
+                        </td>
+                        <td class="area-cell">{{ schedule.area }}</td>
+                        <td class="waste-type-cell">
+                            <span class="waste-type-tag waste-type-{{ schedule.waste_type.lower().replace(' ', '-') }}">
+                                {% if schedule.waste_type == 'General Waste' %}
+                                🗑️
+                                {% elif schedule.waste_type == 'Bulky Waste' %}
+                                📦
+                                {% else %}
+                                ♻️
+                                {% endif %}
+                                {{ schedule.waste_type }}
+                            </span>
+                        </td>
+                        <td class="time-cell">
+                            <span class="time-display">{{ schedule.time_start }} - {{ schedule.time_end }}</span>
+                        </td>
+                        <td class="action-cell">
+                            {% if session.get('role') == 'admin' %}
+                            <a href="{{ url_for('admin_edit_schedule', schedule_id=schedule.id) }}" class="edit-btn">
+                                <i class="fas fa-edit"></i>
+                                <span>Edit</span>
+                            </a>
+                            {% elif session.user_id %}
+                            <form method="POST" action="{{ url_for('set_reminder', schedule_id=schedule.id) }}" style="display: inline;">
+                                <button type="submit" class="reminder-btn-outline">
+                                    <i class="fas fa-bell"></i>
+                                    <span>Set Reminder</span>
+                                </button>
+                            </form>
+                            {% else %}
+                            <a href="{{ url_for('login') }}" class="reminder-btn-outline">
+                                <i class="fas fa-sign-in-alt"></i>
+                                <span>Login to Set</span>
+                            </a>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="section-footer">
+            <p class="note">Collection times may vary during holidays. Please check back for updates.</p>
+        </div>
+    </section>
+
+
+</div>
+
+<style>
+.minimal-schedule-table {
+    width: 100%;
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #f1f1f1;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.minimal-schedule-table thead {
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+    border-bottom: 2px solid #991b1b;
+}
+
+.minimal-schedule-table th {
+    padding: 1.75rem 2rem;
+    text-align: left;
+    font-weight: 700;
+    font-size: 0.9375rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.minimal-schedule-table th:last-child {
+    border-right: none;
+}
+
+.minimal-schedule-table th.day-column { width: 15%; }
+.minimal-schedule-table th.area-column { width: 25%; }
+.minimal-schedule-table th.waste-type-column { width: 20%; }
+.minimal-schedule-table th.time-column { width: 20%; }
+.minimal-schedule-table th.action-column { width: 20%; }
+
+.minimal-schedule-table tbody tr {
+    border-bottom: 1px solid #f8f8f8;
+    transition: background-color 0.15s ease;
+}
+
+.minimal-schedule-table tbody tr:hover {
+    background-color: #fafbfc;
+}
+
+.minimal-schedule-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.minimal-schedule-table td {
+    padding: 1.5rem 2rem;
+    vertical-align: middle;
+    border-bottom: none;
+}
+
+.day-cell {
+    font-weight: 500;
+}
+
+.day-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+}
+
+.day-short {
+    font-size: 1rem;
+    color: #1d1d1f;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+    font-weight: 600;
+}
+
+.day-full {
+    font-size: 0.8125rem;
+    color: #86868b;
+    font-weight: 400;
+}
+
+.area-cell {
+    font-weight: 400;
+    color: #1d1d1f;
+    font-size: 0.9375rem;
+}
+
+.waste-type-cell {
+    text-align: center;
+}
+
+.waste-type-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.5rem 0.875rem;
+    border-radius: 12px;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+    border: 1px solid transparent;
+}
+
+.waste-type-general-waste .waste-type-tag {
+    background: #f2f2f7;
+    color: #1d1d1f;
+    border-color: #e5e5ea;
+}
+
+.waste-type-bulky-waste .waste-type-tag {
+    background: #fefce8;
+    color: #92400e;
+    border-color: #fde68a;
+}
+
+.time-cell {
+    text-align: center;
+}
+
+.time-display {
+    font-weight: 500;
+    color: #1d1d1f;
+    font-size: 1rem;
+}
+
+.action-cell {
+    text-align: center;
+}
+
+.reminder-btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.125rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.15s ease;
+    border: 1px solid #d1d1d6;
+    background: transparent;
+    color: #1d1d1f;
+    cursor: pointer;
+    min-width: 120px;
+    justify-content: center;
+}
+
+.reminder-btn-outline:hover {
+    background-color: #1d1d1f;
+    color: #ffffff;
+    border-color: #1d1d1f;
+    transform: translateY(-0.5px);
+}
+
+.reminder-btn-outline i {
+    font-size: 0.9375rem;
+}
+
+.reminder-btn-outline span {
+    font-size: 0.875rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .minimal-schedule-table {
+        border-radius: 12px;
+    }
+
+    .minimal-schedule-table th,
+    .minimal-schedule-table td {
+        padding: 1rem 1rem;
+    }
+
+    .day-content {
+        flex-direction: row;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .day-short {
+        font-size: 0.9375rem;
+    }
+
+    .day-full {
+        font-size: 0.75rem;
+    }
+
+    .waste-type-tag {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.6875rem;
+    }
+
+    .reminder-btn-outline {
+        padding: 0.375rem 0.75rem;
+        min-width: 90px;
+        font-size: 0.75rem;
+    }
+
+    .reminder-btn-outline span {
+        display: none;
+    }
+
+    .reminder-btn-outline {
+        min-width: auto;
+        padding: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .minimal-schedule-table th.day-column,
+    .minimal-schedule-table th.area-column,
+    .minimal-schedule-table th.waste-type-column,
+    .minimal-schedule-table th.time-column,
+    .minimal-schedule-table th.action-column {
+        width: auto;
+    }
+
+    .minimal-schedule-table th {
+        padding: 0.75rem 0.5rem;
+        font-size: 0.6875rem;
+    }
+
+    .minimal-schedule-table td {
+        padding: 0.75rem 0.5rem;
+    }
+
+    .waste-type-tag {
+        flex-direction: column;
+        gap: 0.25rem;
+        padding: 0.25rem 0.375rem;
+        font-size: 0.625rem;
+    }
+
+    .area-cell,
+    .time-display {
+        font-size: 0.8125rem;
+    }
+}
+</style>
+{% endblock %}
