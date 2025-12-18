@@ -44,3 +44,37 @@ CREATE TABLE IF NOT EXISTS announcements (
         created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
         FOREIGN KEY (created_by) REFERENCES users(user_id)
     )
+
+# Reminders table
+CREATE TABLE IF NOT EXISTS reminders (
+        reminder_id INTEGER PRIMARY KEY AUTOINCREMENT,
+        user_id INTEGER NOT NULL,
+        schedule_id INTEGER NOT NULL,
+        enabled BOOLEAN NOT NULL DEFAULT 1,
+        created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (user_id) REFERENCES users(user_id),
+        FOREIGN KEY (schedule_id) REFERENCES schedules(schedule_id)
+    )
+
+# Notifications table
+CREATE TABLE IF NOT EXISTS notifications (
+        notification_id INTEGER PRIMARY KEY AUTOINCREMENT,
+        user_id INTEGER NOT NULL,
+        type TEXT(50) NOT NULL,
+        title TEXT(150) NOT NULL,
+        content TEXT(500) NOT NULL,
+        related_id INTEGER,
+        is_read BOOLEAN NOT NULL DEFAULT 0,
+        created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (user_id) REFERENCES users(user_id)
+    )
+
+# Activities table
+CREATE TABLE IF NOT EXISTS activities (
+        activity_id INTEGER PRIMARY KEY AUTOINCREMENT,
+        user_id INTEGER NOT NULL,
+        activity_type TEXT(50) NOT NULL,
+        description TEXT(200) NOT NULL,
+        created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (user_id) REFERENCES users(user_id)
+    )
