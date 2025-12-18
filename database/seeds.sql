@@ -68,7 +68,7 @@ INSERT INTO reports (report_id, user_id, issue_type, location, description, phot
 (20, 2, 'Uncollected Waste', '924 Willow Rd, Barangay Sabang', 'Bulk waste from home renovation not collected', NULL, 'pending', '2024-01-20 11:00:00');
 
 -- Seed data for announcements table
-INSERT INTO announcements (id, title, content, created_by, created_at) VALUES
+INSERT INTO announcements (announcement_id, title, content, created_by, created_at) VALUES
 (1, 'Welcome to SABTRACK', 'Welcome to the SABTRACK waste management system. Please report any waste-related issues through our platform.', 1, '2024-01-01 08:00:00'),
 (2, 'Waste Collection Schedule Update', 'Please note that waste collection schedules may vary due to holidays. Check the schedule page for updates.', 1, '2024-01-02 09:00:00'),
 (3, 'Environmental Awareness Campaign', 'Join our environmental awareness campaign to keep Barangay Sabang clean and green.', 1, '2024-01-03 10:00:00'),
@@ -89,3 +89,72 @@ INSERT INTO announcements (id, title, content, created_by, created_at) VALUES
 (18, 'Volunteer Opportunities', 'Volunteer for environmental initiatives. Join clean-up drives and awareness programs in your community.', 1, '2024-01-18 09:00:00'),
 (19, 'Waste Audit Results', 'Our recent waste audit shows progress in recycling rates. Thank you for your participation in sustainable practices.', 1, '2024-01-19 10:00:00'),
 (20, 'Sustainable Packaging', 'Choose products with sustainable packaging. Reduce plastic waste by selecting biodegradable or reusable options.', 1, '2024-01-20 11:00:00');
+
+-- Seed data for reminders table
+INSERT INTO reminders (reminder_id, user_id, schedule_id, enabled, created_at) VALUES
+(1, 2, 1, 1, '2024-01-01 08:00:00'),
+(2, 3, 2, 1, '2024-01-02 09:00:00'),
+(3, 4, 3, 1, '2024-01-03 10:00:00'),
+(4, 5, 4, 1, '2024-01-04 11:00:00'),
+(5, 6, 5, 1, '2024-01-05 12:00:00'),
+(6, 7, 6, 1, '2024-01-06 13:00:00'),
+(7, 8, 7, 1, '2024-01-07 14:00:00'),
+(8, 9, 8, 1, '2024-01-08 15:00:00'),
+(9, 10, 9, 1, '2024-01-09 16:00:00'),
+(10, 11, 10, 1, '2024-01-10 17:00:00'),
+(11, 12, 11, 1, '2024-01-11 18:00:00'),
+(12, 13, 12, 1, '2024-01-12 19:00:00'),
+(13, 14, 13, 1, '2024-01-13 20:00:00'),
+(14, 15, 14, 1, '2024-01-14 21:00:00'),
+(15, 16, 15, 1, '2024-01-15 22:00:00'),
+(16, 17, 16, 1, '2024-01-16 23:00:00'),
+(17, 18, 17, 1, '2024-01-17 08:00:00'),
+(18, 19, 18, 1, '2024-01-18 09:00:00'),
+(19, 20, 19, 1, '2024-01-19 10:00:00'),
+(20, 2, 20, 1, '2024-01-20 11:00:00');
+
+-- Seed data for notifications table
+INSERT INTO notifications (notification_id, user_id, type, title, content, related_id, is_read, created_at) VALUES
+(1, 2, 'announcement', 'New Announcement', 'A new announcement has been posted. Check it out!', 1, 0, '2024-01-01 08:00:00'),
+(2, 3, 'report_update', 'Report Status Update', 'Your report has been updated to resolved.', 1, 0, '2024-01-02 09:00:00'),
+(3, 4, 'schedule_reminder', 'Waste Collection Reminder', 'Waste collection is scheduled for tomorrow in your area.', 1, 0, '2024-01-03 10:00:00'),
+(4, 5, 'announcement', 'Community Event', 'Join us for the community clean-up event this weekend.', 2, 0, '2024-01-04 11:00:00'),
+(5, 6, 'report_update', 'Report Acknowledged', 'Your report has been acknowledged and is being processed.', 2, 0, '2024-01-05 12:00:00'),
+(6, 7, 'schedule_reminder', 'Recycling Day', 'Recycling collection is today. Please prepare your recyclables.', 2, 0, '2024-01-06 13:00:00'),
+(7, 8, 'announcement', 'New Recycling Program', 'We have introduced a new recycling program. Learn more!', 3, 0, '2024-01-07 14:00:00'),
+(8, 9, 'report_update', 'Report Resolved', 'Your report has been resolved. Thank you for your feedback.', 3, 0, '2024-01-08 15:00:00'),
+(9, 10, 'schedule_reminder', 'Bulky Waste Collection', 'Bulky waste collection is scheduled for this week.', 3, 0, '2024-01-09 16:00:00'),
+(10, 11, 'announcement', 'Environmental Awareness', 'Participate in our environmental awareness campaign.', 4, 0, '2024-01-10 17:00:00'),
+(11, 12, 'report_update', 'Report Pending', 'Your report is still pending review.', 4, 0, '2024-01-11 18:00:00'),
+(12, 13, 'schedule_reminder', 'General Waste Pickup', 'General waste pickup is tomorrow morning.', 4, 0, '2024-01-12 19:00:00'),
+(13, 14, 'announcement', 'Waste Management Tips', 'Check out our latest tips for better waste management.', 5, 0, '2024-01-13 20:00:00'),
+(14, 15, 'report_update', 'Report Update', 'There is an update on your submitted report.', 5, 0, '2024-01-14 21:00:00'),
+(15, 16, 'schedule_reminder', 'Collection Schedule Change', 'The collection schedule has been updated. Please check.', 5, 0, '2024-01-15 22:00:00'),
+(16, 17, 'announcement', 'Community Meeting', 'Attend the community meeting on waste management.', 6, 0, '2024-01-16 23:00:00'),
+(17, 18, 'report_update', 'Report Closed', 'Your report has been closed.', 6, 0, '2024-01-17 08:00:00'),
+(18, 19, 'schedule_reminder', 'Holiday Collection', 'Collection schedule for holidays has been posted.', 6, 0, '2024-01-18 09:00:00'),
+(19, 20, 'announcement', 'New Features', 'New features have been added to the platform.', 7, 0, '2024-01-19 10:00:00'),
+(20, 2, 'report_update', 'Report Feedback', 'Feedback on your report has been provided.', 7, 0, '2024-01-20 11:00:00');
+
+-- Seed data for activities table
+INSERT INTO activities (activity_id, user_id, activity_type, description, created_at) VALUES
+(1, 2, 'login', 'User logged in to the system.', '2024-01-01 08:00:00'),
+(2, 3, 'report_submitted', 'User submitted a new waste report.', '2024-01-02 09:00:00'),
+(3, 4, 'schedule_viewed', 'User viewed the waste collection schedule.', '2024-01-03 10:00:00'),
+(4, 5, 'announcement_read', 'User read a new announcement.', '2024-01-04 11:00:00'),
+(5, 6, 'profile_updated', 'User updated their profile information.', '2024-01-05 12:00:00'),
+(6, 7, 'report_updated', 'User updated an existing report.', '2024-01-06 13:00:00'),
+(7, 8, 'reminder_set', 'User set a new reminder for waste collection.', '2024-01-07 14:00:00'),
+(8, 9, 'notification_read', 'User read a notification.', '2024-01-08 15:00:00'),
+(9, 10, 'login', 'User logged in to the system.', '2024-01-09 16:00:00'),
+(10, 11, 'report_submitted', 'User submitted a new waste report.', '2024-01-10 17:00:00'),
+(11, 12, 'schedule_viewed', 'User viewed the waste collection schedule.', '2024-01-11 18:00:00'),
+(12, 13, 'announcement_read', 'User read a new announcement.', '2024-01-12 19:00:00'),
+(13, 14, 'profile_updated', 'User updated their profile information.', '2024-01-13 20:00:00'),
+(14, 15, 'report_updated', 'User updated an existing report.', '2024-01-14 21:00:00'),
+(15, 16, 'reminder_set', 'User set a new reminder for waste collection.', '2024-01-15 22:00:00'),
+(16, 17, 'notification_read', 'User read a notification.', '2024-01-16 23:00:00'),
+(17, 18, 'login', 'User logged in to the system.', '2024-01-17 08:00:00'),
+(18, 19, 'report_submitted', 'User submitted a new waste report.', '2024-01-18 09:00:00'),
+(19, 20, 'schedule_viewed', 'User viewed the waste collection schedule.', '2024-01-19 10:00:00'),
+(20, 2, 'announcement_read', 'User read a new announcement.', '2024-01-20 11:00:00');
