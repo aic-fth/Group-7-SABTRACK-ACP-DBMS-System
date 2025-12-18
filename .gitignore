@@ -3,6 +3,7 @@ instance/
 *.db
 *.sqlite
 *.sqlite3
+*.db-journal
 
 # Upload files
 uploads/

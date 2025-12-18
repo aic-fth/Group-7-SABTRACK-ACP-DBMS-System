@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 class Config:
+    """Configuration class for SABTRACK application settings."""
     SECRET_KEY = os.getenv('SECRET_KEY', 'sabtrack-secret-key-2025')
     DATABASE = 'instance/sabtrack.db'
     UPLOAD_FOLDER = 'uploads'

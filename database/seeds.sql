@@ -1,28 +1,28 @@
 -- Seed data for users table
-INSERT INTO users (id, username, email, password, full_name, age, address, resident_id, phone, role, profile_picture, created_at) VALUES
-(1, 'admin', 'sabtrack.system@gmail.com', 'pbkdf2:sha256:600000$dummy$dummy', 'System Administrator', NULL, 'Barangay Sabang', NULL, NULL, 'admin', NULL, '2024-01-01 00:00:00'),
-(2, 'john_doe', 'john@example.com', 'pbkdf2:sha256:600000$dummy$dummy', 'John Doe', 30, '123 Main St, Barangay Sabang', 'RES001', '123-456-7890', 'resident', NULL, '2024-01-01 00:00:00'),
-(3, 'jane_smith', 'jane@example.com', 'pbkdf2:sha256:600000$dummy$dummy', 'Jane Smith', 25, '456 Oak Ave, Barangay Sabang', 'RES002', '098-765-4321', 'resident', NULL, '2024-01-01 00:00:00'),
-(4, 'mike_johnson', 'mike@example.com', 'pbkdf2:sha256:600000$dummy$dummy', 'Mike Johnson', 40, '789 Pine St, Barangay Sabang', 'RES003', '555-123-4567', 'resident', NULL, '2024-01-01 00:00:00'),
-(5, 'sarah_wilson', 'sarah@example.com', 'pbkdf2:sha256:600000$dummy$dummy', 'Sarah Wilson', 35, '321 Elm St, Barangay Sabang', 'RES004', '777-888-9999', 'resident', NULL, '2024-01-01 00:00:00'),
-(6, 'alex_garcia', 'alex@example.com', 'pbkdf2:sha256:600000$dummy$dummy', 'Alex Garcia', 28, '654 Maple Rd, Barangay Sabang', 'RES005', '111-222-3333', 'resident', NULL, '2024-01-01 00:00:00'),
-(7, 'emily_davis', 'emily@example.com', 'pbkdf2:sha256:600000$dummy$dummy', 'Emily Davis', 32, '987 Birch Ln, Barangay Sabang', 'RES006', '444-555-6666', 'resident', NULL, '2024-01-01 00:00:00'),
-(8, 'robert_miller', 'robert@example.com', 'pbkdf2:sha256:600000$dummy$dummy', 'Robert Miller', 45, '321 Cedar St, Barangay Sabang', 'RES007', '777-888-0000', 'resident', NULL, '2024-01-01 00:00:00'),
-(9, 'lisa_brown', 'lisa@example.com', 'pbkdf2:sha256:600000$dummy$dummy', 'Lisa Brown', 29, '159 Spruce Ave, Barangay Sabang', 'RES008', '222-333-4444', 'resident', NULL, '2024-01-01 00:00:00'),
-(10, 'david_taylor', 'david@example.com', 'pbkdf2:sha256:600000$dummy$dummy', 'David Taylor', 38, '753 Willow Rd, Barangay Sabang', 'RES009', '555-666-7777', 'resident', NULL, '2024-01-01 00:00:00'),
-(11, 'anna_anderson', 'anna@example.com', 'pbkdf2:sha256:600000$dummy$dummy', 'Anna Anderson', 26, '246 Ash St, Barangay Sabang', 'RES010', '888-999-1111', 'resident', NULL, '2024-01-01 00:00:00'),
-(12, 'chris_thomas', 'chris@example.com', 'pbkdf2:sha256:600000$dummy$dummy', 'Chris Thomas', 33, '369 Poplar Ln, Barangay Sabang', 'RES011', '000-111-2222', 'resident', NULL, '2024-01-01 00:00:00'),
-(13, 'maria_jackson', 'maria@example.com', 'pbkdf2:sha256:600000$dummy$dummy', 'Maria Jackson', 41, '582 Fir Ave, Barangay Sabang', 'RES012', '333-444-5555', 'resident', NULL, '2024-01-01 00:00:00'),
-(14, 'peter_white', 'peter@example.com', 'pbkdf2:sha256:600000$dummy$dummy', 'Peter White', 27, '147 Elm Rd, Barangay Sabang', 'RES013', '666-777-8888', 'resident', NULL, '2024-01-01 00:00:00'),
-(15, 'olivia_harris', 'olivia@example.com', 'pbkdf2:sha256:600000$dummy$dummy', 'Olivia Harris', 31, '258 Oak St, Barangay Sabang', 'RES014', '999-000-1111', 'resident', NULL, '2024-01-01 00:00:00'),
-(16, 'james_martin', 'james@example.com', 'pbkdf2:sha256:600000$dummy$dummy', 'James Martin', 36, '369 Pine Ln, Barangay Sabang', 'RES015', '222-333-0000', 'resident', NULL, '2024-01-01 00:00:00'),
-(17, 'sophia_thompson', 'sophia@example.com', 'pbkdf2:sha256:600000$dummy$dummy', 'Sophia Thompson', 24, '480 Maple Ave, Barangay Sabang', 'RES016', '555-666-0000', 'resident', NULL, '2024-01-01 00:00:00'),
-(18, 'william_garcia', 'william@example.com', 'pbkdf2:sha256:600000$dummy$dummy', 'William Garcia', 42, '591 Birch Rd, Barangay Sabang', 'RES017', '888-999-0000', 'resident', NULL, '2024-01-01 00:00:00'),
-(19, 'isabella_martinez', 'isabella@example.com', 'pbkdf2:sha256:600000$dummy$dummy', 'Isabella Martinez', 29, '702 Cedar St, Barangay Sabang', 'RES018', '111-222-0000', 'resident', NULL, '2024-01-01 00:00:00'),
-(20, 'jacob_robinson', 'jacob@example.com', 'pbkdf2:sha256:600000$dummy$dummy', 'Jacob Robinson', 34, '813 Spruce Ln, Barangay Sabang', 'RES019', '444-555-0000', 'resident', NULL, '2024-01-01 00:00:00');
+INSERT INTO users (user_id, username, email, password, full_name, age, address, resident_id, phone, role, created_at) VALUES
+(1, 'admin', 'sabtrack.system@gmail.com', 'pbkdf2:sha256:600000$dummy$dummy', 'System Administrator', NULL, 'Barangay Sabang', NULL, NULL, 'admin', '2024-01-01 00:00:00'),
+(2, 'john_doe', 'john@example.com', 'pbkdf2:sha256:600000$dummy$dummy', 'John Doe', 30, '123 Main St, Barangay Sabang', 'RES001', '123-456-7890', 'resident', '2024-01-01 00:00:00'),
+(3, 'jane_smith', 'jane@example.com', 'pbkdf2:sha256:600000$dummy$dummy', 'Jane Smith', 25, '456 Oak Ave, Barangay Sabang', 'RES002', '098-765-4321', 'resident', '2024-01-01 00:00:00'),
+(4, 'mike_johnson', 'mike@example.com', 'pbkdf2:sha256:600000$dummy$dummy', 'Mike Johnson', 40, '789 Pine St, Barangay Sabang', 'RES003', '555-123-4567', 'resident', '2024-01-01 00:00:00'),
+(5, 'sarah_wilson', 'sarah@example.com', 'pbkdf2:sha256:600000$dummy$dummy', 'Sarah Wilson', 35, '321 Elm St, Barangay Sabang', 'RES004', '777-888-9999', 'resident', '2024-01-01 00:00:00'),
+(6, 'alex_garcia', 'alex@example.com', 'pbkdf2:sha256:600000$dummy$dummy', 'Alex Garcia', 28, '654 Maple Rd, Barangay Sabang', 'RES005', '111-222-3333', 'resident', '2024-01-01 00:00:00'),
+(7, 'emily_davis', 'emily@example.com', 'pbkdf2:sha256:600000$dummy$dummy', 'Emily Davis', 32, '987 Birch Ln, Barangay Sabang', 'RES006', '444-555-6666', 'resident', '2024-01-01 00:00:00'),
+(8, 'robert_miller', 'robert@example.com', 'pbkdf2:sha256:600000$dummy$dummy', 'Robert Miller', 45, '321 Cedar St, Barangay Sabang', 'RES007', '777-888-0000', 'resident', '2024-01-01 00:00:00'),
+(9, 'lisa_brown', 'lisa@example.com', 'pbkdf2:sha256:600000$dummy$dummy', 'Lisa Brown', 29, '159 Spruce Ave, Barangay Sabang', 'RES008', '222-333-4444', 'resident', '2024-01-01 00:00:00'),
+(10, 'david_taylor', 'david@example.com', 'pbkdf2:sha256:600000$dummy$dummy', 'David Taylor', 38, '753 Willow Rd, Barangay Sabang', 'RES009', '555-666-7777', 'resident', '2024-01-01 00:00:00'),
+(11, 'anna_anderson', 'anna@example.com', 'pbkdf2:sha256:600000$dummy$dummy', 'Anna Anderson', 26, '246 Ash St, Barangay Sabang', 'RES010', '888-999-1111', 'resident', '2024-01-01 00:00:00'),
+(12, 'chris_thomas', 'chris@example.com', 'pbkdf2:sha256:600000$dummy$dummy', 'Chris Thomas', 33, '369 Poplar Ln, Barangay Sabang', 'RES011', '000-111-2222', 'resident', '2024-01-01 00:00:00'),
+(13, 'maria_jackson', 'maria@example.com', 'pbkdf2:sha256:600000$dummy$dummy', 'Maria Jackson', 41, '582 Fir Ave, Barangay Sabang', 'RES012', '333-444-5555', 'resident', '2024-01-01 00:00:00'),
+(14, 'peter_white', 'peter@example.com', 'pbkdf2:sha256:600000$dummy$dummy', 'Peter White', 27, '147 Elm Rd, Barangay Sabang', 'RES013', '666-777-8888', 'resident', '2024-01-01 00:00:00'),
+(15, 'olivia_harris', 'olivia@example.com', 'pbkdf2:sha256:600000$dummy$dummy', 'Olivia Harris', 31, '258 Oak St, Barangay Sabang', 'RES014', '999-000-1111', 'resident', '2024-01-01 00:00:00'),
+(16, 'james_martin', 'james@example.com', 'pbkdf2:sha256:600000$dummy$dummy', 'James Martin', 36, '369 Pine Ln, Barangay Sabang', 'RES015', '222-333-0000', 'resident', '2024-01-01 00:00:00'),
+(17, 'sophia_thompson', 'sophia@example.com', 'pbkdf2:sha256:600000$dummy$dummy', 'Sophia Thompson', 24, '480 Maple Ave, Barangay Sabang', 'RES016', '555-666-0000', 'resident', '2024-01-01 00:00:00'),
+(18, 'william_garcia', 'william@example.com', 'pbkdf2:sha256:600000$dummy$dummy', 'William Garcia', 42, '591 Birch Rd, Barangay Sabang', 'RES017', '888-999-0000', 'resident', '2024-01-01 00:00:00'),
+(19, 'isabella_martinez', 'isabella@example.com', 'pbkdf2:sha256:600000$dummy$dummy', 'Isabella Martinez', 29, '702 Cedar St, Barangay Sabang', 'RES018', '111-222-0000', 'resident', '2024-01-01 00:00:00'),
+(20, 'jacob_robinson', 'jacob@example.com', 'pbkdf2:sha256:600000$dummy$dummy', 'Jacob Robinson', 34, '813 Spruce Ln, Barangay Sabang', 'RES019', '444-555-0000', 'resident', '2024-01-01 00:00:00');
 
 -- Seed data for schedules table
-INSERT INTO schedules (id, day, area, waste_type, time_start, time_end) VALUES
+INSERT INTO schedules (schedule_id, day, area, waste_type, time_start, time_end) VALUES
 (1, 'Monday', 'Gen Luna St', 'General Waste', '7:00 AM', '10:00 AM'),
 (2, 'Tuesday', 'Q P. Laygo St', 'General Waste', '7:00 AM', '10:00 AM'),
 (3, 'Wednesday', '9 Llamar', 'General Waste', '8:00 AM', '10:00 AM'),
@@ -45,7 +45,7 @@ INSERT INTO schedules (id, day, area, waste_type, time_start, time_end) VALUES
 (20, 'Tuesday', 'Fernandez Ln', 'Recyclables', '6:00 AM', '9:00 AM');
 
 -- Seed data for reports table
-INSERT INTO reports (id, user_id, issue_type, location, description, photo_path, status, created_at) VALUES
+INSERT INTO reports (report_id, user_id, issue_type, location, description, photo_path, status, created_at) VALUES
 (1, 2, 'Illegal Dumping', '123 Main St, Barangay Sabang', 'Garbage dumped illegally on the street corner', NULL, 'pending', '2024-01-01 08:00:00'),
 (2, 3, 'Overflowing Bin', '456 Oak Ave, Barangay Sabang', 'Public waste bin is overflowing and needs immediate attention', NULL, 'pending', '2024-01-02 09:00:00'),
 (3, 4, 'Blocked Drainage', '789 Pine St, Barangay Sabang', 'Waste blocking the drainage system causing flooding', NULL, 'resolved', '2024-01-03 10:00:00'),
@@ -89,3 +89,72 @@ INSERT INTO announcements (id, title, content, created_by, created_at) VALUES
 (18, 'Volunteer Opportunities', 'Volunteer for environmental initiatives. Join clean-up drives and awareness programs in your community.', 1, '2024-01-18 09:00:00'),
 (19, 'Waste Audit Results', 'Our recent waste audit shows progress in recycling rates. Thank you for your participation in sustainable practices.', 1, '2024-01-19 10:00:00'),
 (20, 'Sustainable Packaging', 'Choose products with sustainable packaging. Reduce plastic waste by selecting biodegradable or reusable options.', 1, '2024-01-20 11:00:00');
+
+-- Seed data for reminders table
+INSERT INTO reminders (reminder_id, user_id, schedule_id, enabled, created_at) VALUES
+(1, 2, 1, 1, '2024-01-01 08:00:00'),
+(2, 3, 2, 1, '2024-01-02 09:00:00'),
+(3, 4, 3, 1, '2024-01-03 10:00:00'),
+(4, 5, 4, 1, '2024-01-04 11:00:00'),
+(5, 6, 5, 1, '2024-01-05 12:00:00'),
+(6, 7, 6, 1, '2024-01-06 13:00:00'),
+(7, 8, 7, 1, '2024-01-07 14:00:00'),
+(8, 9, 8, 1, '2024-01-08 15:00:00'),
+(9, 10, 9, 1, '2024-01-09 16:00:00'),
+(10, 11, 10, 1, '2024-01-10 17:00:00'),
+(11, 12, 11, 1, '2024-01-11 18:00:00'),
+(12, 13, 12, 1, '2024-01-12 19:00:00'),
+(13, 14, 13, 1, '2024-01-13 20:00:00'),
+(14, 15, 14, 1, '2024-01-14 21:00:00'),
+(15, 16, 15, 1, '2024-01-15 22:00:00'),
+(16, 17, 16, 1, '2024-01-16 23:00:00'),
+(17, 18, 17, 1, '2024-01-17 08:00:00'),
+(18, 19, 18, 1, '2024-01-18 09:00:00'),
+(19, 20, 19, 1, '2024-01-19 10:00:00'),
+(20, 2, 20, 1, '2024-01-20 11:00:00');
+
+-- Seed data for notifications table
+INSERT INTO notifications (notification_id, user_id, type, title, content, related_id, is_read, created_at) VALUES
+(1, 2, 'announcement', 'New Announcement', 'A new announcement has been posted. Check it out!', 1, 0, '2024-01-01 08:00:00'),
+(2, 3, 'report_update', 'Report Status Update', 'Your report has been updated to resolved.', 1, 0, '2024-01-02 09:00:00'),
+(3, 4, 'schedule_reminder', 'Waste Collection Reminder', 'Waste collection is scheduled for tomorrow in your area.', 1, 0, '2024-01-03 10:00:00'),
+(4, 5, 'announcement', 'Community Event', 'Join us for the community clean-up event this weekend.', 2, 0, '2024-01-04 11:00:00'),
+(5, 6, 'report_update', 'Report Acknowledged', 'Your report has been acknowledged and is being processed.', 2, 0, '2024-01-05 12:00:00'),
+(6, 7, 'schedule_reminder', 'Recycling Day', 'Recycling collection is today. Please prepare your recyclables.', 2, 0, '2024-01-06 13:00:00'),
+(7, 8, 'announcement', 'New Recycling Program', 'We have introduced a new recycling program. Learn more!', 3, 0, '2024-01-07 14:00:00'),
+(8, 9, 'report_update', 'Report Resolved', 'Your report has been resolved. Thank you for your feedback.', 3, 0, '2024-01-08 15:00:00'),
+(9, 10, 'schedule_reminder', 'Bulky Waste Collection', 'Bulky waste collection is scheduled for this week.', 3, 0, '2024-01-09 16:00:00'),
+(10, 11, 'announcement', 'Environmental Awareness', 'Participate in our environmental awareness campaign.', 4, 0, '2024-01-10 17:00:00'),
+(11, 12, 'report_update', 'Report Pending', 'Your report is still pending review.', 4, 0, '2024-01-11 18:00:00'),
+(12, 13, 'schedule_reminder', 'General Waste Pickup', 'General waste pickup is tomorrow morning.', 4, 0, '2024-01-12 19:00:00'),
+(13, 14, 'announcement', 'Waste Management Tips', 'Check out our latest tips for better waste management.', 5, 0, '2024-01-13 20:00:00'),
+(14, 15, 'report_update', 'Report Update', 'There is an update on your submitted report.', 5, 0, '2024-01-14 21:00:00'),
+(15, 16, 'schedule_reminder', 'Collection Schedule Change', 'The collection schedule has been updated. Please check.', 5, 0, '2024-01-15 22:00:00'),
+(16, 17, 'announcement', 'Community Meeting', 'Attend the community meeting on waste management.', 6, 0, '2024-01-16 23:00:00'),
+(17, 18, 'report_update', 'Report Closed', 'Your report has been closed.', 6, 0, '2024-01-17 08:00:00'),
+(18, 19, 'schedule_reminder', 'Holiday Collection', 'Collection schedule for holidays has been posted.', 6, 0, '2024-01-18 09:00:00'),
+(19, 20, 'announcement', 'New Features', 'New features have been added to the platform.', 7, 0, '2024-01-19 10:00:00'),
+(20, 2, 'report_update', 'Report Feedback', 'Feedback on your report has been provided.', 7, 0, '2024-01-20 11:00:00');
+
+-- Seed data for activities table
+INSERT INTO activities (activity_id, user_id, activity_type, description, created_at) VALUES
+(1, 2, 'login', 'User logged in to the system.', '2024-01-01 08:00:00'),
+(2, 3, 'report_submitted', 'User submitted a new waste report.', '2024-01-02 09:00:00'),
+(3, 4, 'schedule_viewed', 'User viewed the waste collection schedule.', '2024-01-03 10:00:00'),
+(4, 5, 'announcement_read', 'User read a new announcement.', '2024-01-04 11:00:00'),
+(5, 6, 'profile_updated', 'User updated their profile information.', '2024-01-05 12:00:00'),
+(6, 7, 'report_updated', 'User updated an existing report.', '2024-01-06 13:00:00'),
+(7, 8, 'reminder_set', 'User set a new reminder for waste collection.', '2024-01-07 14:00:00'),
+(8, 9, 'notification_read', 'User read a notification.', '2024-01-08 15:00:00'),
+(9, 10, 'login', 'User logged in to the system.', '2024-01-09 16:00:00'),
+(10, 11, 'report_submitted', 'User submitted a new waste report.', '2024-01-10 17:00:00'),
+(11, 12, 'schedule_viewed', 'User viewed the waste collection schedule.', '2024-01-11 18:00:00'),
+(12, 13, 'announcement_read', 'User read a new announcement.', '2024-01-12 19:00:00'),
+(13, 14, 'profile_updated', 'User updated their profile information.', '2024-01-13 20:00:00'),
+(14, 15, 'report_updated', 'User updated an existing report.', '2024-01-14 21:00:00'),
+(15, 16, 'reminder_set', 'User set a new reminder for waste collection.', '2024-01-15 22:00:00'),
+(16, 17, 'notification_read', 'User read a notification.', '2024-01-16 23:00:00'),
+(17, 18, 'login', 'User logged in to the system.', '2024-01-17 08:00:00'),
+(18, 19, 'report_submitted', 'User submitted a new waste report.', '2024-01-18 09:00:00'),
+(19, 20, 'schedule_viewed', 'User viewed the waste collection schedule.', '2024-01-19 10:00:00'),
+(20, 2, 'announcement_read', 'User read a new announcement.', '2024-01-20 11:00:00');

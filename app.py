@@ -30,11 +30,13 @@ SMTP_SERVER = os.getenv('SMTP_SERVER', 'smtp.gmail.com')
 SMTP_PORT = int(os.getenv('SMTP_PORT', 587))
 
 def get_db():
+    """Get a database connection with row factory set to Row."""
     conn = sqlite3.connect(DATABASE)
     conn.row_factory = sqlite3.Row
     return conn
 
 def init_db():
+    """Initialize the database by creating all necessary tables and inserting default data."""
     conn = get_db()
     c = conn.cursor()
     
@@ -147,6 +149,7 @@ def init_db():
     conn.close()
 
 def send_email(to_email, subject, body):
+    """Send an email using SMTP configuration."""
     try:
         print(f"📧 Attempting to send email to: {to_email}")
         print(f"📧 Subject: {subject}")
